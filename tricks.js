@@ -9,3 +9,5 @@ console.log("A" - 1 + "B")
 console.log("A" - "C" + "B")
 console.log("A" - 5 + "-1")
 console.log(5 - "15" + "-1")
+
+console.log(typeof typeof 1)
