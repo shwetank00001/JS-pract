@@ -1,22 +1,23 @@
-function showData(){
-    return new Promise(( resolve, reject ) => {
-        let value = false
-        if(value){
-            const data = { id: 1, name: "Shwetank" }
+function addData(){
+    return new Promise((resolve, reject) => {
+        let test = false
+        if(test){
+            const data = "shwetank"
             resolve(data)
         }
         else{
-            reject(new Error("cant be fetched"))
+            reject(new Error("A new Error"))
         }
     })
 }
 
 async function getData(){
-    try {
-        const newData = await showData()
-        console.log(newData)
-    } catch (error) {
-        console.log(error)
+    try{
+        const newData = await addData()
+        console.log("Data is", newData)
+    }
+    catch(err){
+        console.log("Error is" , err)
     }
 }
 
