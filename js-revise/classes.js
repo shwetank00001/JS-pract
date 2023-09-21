@@ -10,10 +10,9 @@ class Test2 extends Test{
         super(name,age)
         this.loc = loc
     }
-
 }
 
-const a = new Test("SHwetank", 23)
+const a = new Test("Shwetank", 23)
 const b = new Test2("Mishra", 24, "Noida")
 console.log(a)
 console.log(b)

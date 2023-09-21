@@ -1,7 +1,7 @@
 function getData(){
     return new Promise( (resolve,reject ) => {
         const value = true
-        if(!value){
+        if(value){
             const data = {"id" : 1, "name" : "shwetank"}
             resolve(data)
         }
