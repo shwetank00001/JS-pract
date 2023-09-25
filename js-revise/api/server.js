@@ -47,6 +47,8 @@ app.post('/user/new' , async (req, res) => {
         email : "Shwetank@gmail.com"
     })
 
+    res.send(user)
+
     res.json( {
         success : true,
         message: "Added Successfully"
