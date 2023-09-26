@@ -1,7 +1,17 @@
-import express from 'express'
+import express, { urlencoded } from 'express'
 import mongoose, { Mongoose, mongo } from 'mongoose';
 
 const app = express();
+
+
+
+// for reading form data
+app.use(express.urlencoded({ extended: false}))
+
+
+
+// for reading json data i.e= postman
+app.use(express.json())
 
 async function connected(){
     try {
@@ -31,28 +41,63 @@ app.get('/' ,  (req,res) => {
 
 app.get('/users/all', async(req,res)=> {
 
-    const user = await User.find( { })
+    try {
+        const user = await User.find( { })
+        console.log(req.query)
 
-    res.json({
-        sucess : true,
-        user
+        const id = req.query.id
+        console.log(id)
+
+
+        res.send({
+            sucess : true,
+            user
     })
+
+    } catch (error) {
+        res.send(error)
+    }
+
+})
+
+
+//dynamic route
+
+app.get('/userID/:id', async ( req, res) => {
+    const id = req.params.id
+
+    const user = await User.findById(id)
+    console.log(req.params)
+
+    res.status(200).json({
+        success : true,
+        user
+    }) 
+
+
 })
 
 app.post('/user/new' , async (req, res) => {
 
-    const user = await User.create({
-        name:"Shwetank", 
-        password:"21131", 
-        email : "Shwetank@gmail.com"
-    })
+    try {
+        const { name, password, email } = req.body
 
-    res.send(user)
+        const user = await User.create({
+            name,
+            password,
+            email
+        })
+    
+    
+        res.cookie("temp cookie", "lol").json( {
+            success : true,
+            message: "Added Successfully"
+        })
+    } catch (error) {
+        res.send(error)
+    }
 
-    res.json( {
-        success : true,
-        message: "Added Successfully"
-    })
+
 })
 
 
