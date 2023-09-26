@@ -21,7 +21,7 @@ app.get('/', (req, res, next) => {
     })
 })
 
-app.get('/api/v1', things)
+app.use('/api/v1', things)
 
 
 app.listen( 5000, () => {
