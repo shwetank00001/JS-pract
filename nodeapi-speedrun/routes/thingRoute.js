@@ -8,4 +8,4 @@ route.get('/all_things', showThings)
 route.get('/single_things/:id', getSingleThings)
 route.delete('/delete_thing/:id', deleteThings)
 
-module.exports = route
+module.exports = route 
