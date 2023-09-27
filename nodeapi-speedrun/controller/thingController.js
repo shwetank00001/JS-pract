@@ -69,9 +69,21 @@ async function deleteThings ( req, res) {
 
 async function updateThings ( req, res ) {
     try {
-        const thing = await Things.findById(req.params)
+        let thing = await Things.findById(req.params.id)
+        console.log(req.params.id)
+
+        thing = await Things.findByIdAndUpdate(req.params.id, req.body)
+
+
+        res.status(200).json({
+            success : true,
+            thing
+        })
     } catch (error) {
-        console.log(error)
+        res.json({
+            success : false,
+            message: error
+        })
     }
 }
 
@@ -80,5 +92,6 @@ module.exports = {
     createThing,
     showThings,
     getSingleThings,
-    deleteThings
+    deleteThings,
+    updateThings
 }
