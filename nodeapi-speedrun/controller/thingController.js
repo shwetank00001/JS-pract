@@ -25,16 +25,13 @@ async function showThings(req,res){
 }
 
 
-async function getSingleThings( req,res){
+async function getSingleThings( req,res, next){
     
-
     try {
-
         const thing = await Things.findById(req.params.id)
 
         if(!thing){
-            res.send("Item Not Present in DB !")
-            console.log("Item Not Present in DB !")
+            return next( new Error("Item not in DB"))
         }
 
         res.status(200).json({
@@ -43,12 +40,12 @@ async function getSingleThings( req,res){
         })
         
     } catch (error) {
-        console.log(error)  
+        return next( new Error("Can not get items due to internal error"))
     }
 }
 
 
-async function deleteThings ( req, res) {
+async function deleteThings ( req, res, next) {
     try {
         const thing = await Things.findByIdAndDelete(req.params.id)
         if(!thing){
@@ -63,15 +60,27 @@ async function deleteThings ( req, res) {
         })
 
     } catch (error) {
-        res.send("Item Can not be deleted !")
+        return next(new Error("Item not present !"))
     }
 }
 
 async function updateThings ( req, res ) {
     try {
-        const thing = await Things.findById(req.params)
+        let thing = await Things.findById(req.params.id)
+        console.log(req.params.id)
+
+        thing = await Things.findByIdAndUpdate(req.params.id, req.body)
+
+
+        res.status(200).json({
+            success : true,
+            thing
+        })
     } catch (error) {
-        console.log(error)
+        res.json({
+            success : false,
+            message: error
+        })
     }
 }
 
@@ -80,5 +89,6 @@ module.exports = {
     createThing,
     showThings,
     getSingleThings,
-    deleteThings
+    deleteThings,
+    updateThings
 }

@@ -1,6 +1,7 @@
 const express = require('express')
 require('./db/connect')
 const things = require('./routes/thingRoute')
+const errorMiddleware = require('./middleware/error')
 
 
 const app = express()
@@ -22,6 +23,8 @@ app.get('/', (req, res, next) => {
 })
 
 app.use('/api/v1', things)
+
+app.use(errorMiddleware)
 
 
 app.listen( 5000, () => {
