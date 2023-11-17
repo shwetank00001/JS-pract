@@ -5,16 +5,14 @@
 //  Closures are often used for data encapsulation, event handling, and creating modular code structures. 
 //  They are created when a nested function references variables from its containing function's scope.
 
-
+const x = 20
 function outer(){
-    let out= "IM OUTER"
 
     function inner(){
-        console.log(out)
+        console.log(x)
     }
 
-    return inner
+    inner()
 }
 
-const data = outer()
-data()
+outer()
