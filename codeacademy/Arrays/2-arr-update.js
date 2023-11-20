@@ -32,6 +32,22 @@ const chores1 = ['wash dishes', 'do laundry', 'take out trash', 'cook dinner', '
 chores.pop()
 console.log(chores1)
 
+//nested arrays trick
+
+const numberClusters = [
+    [1, 2],
+    [3, 4],
+    [5, 6],
+    [2,[4,5]]
+];
+
+const target = numberClusters[2];
+console.log(target);
+const target1 = numberClusters[2][1];
+console.log(target1);
+const target2 = numberClusters[3][1][0];
+console.log(target2);
+
 
 
 
