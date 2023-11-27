@@ -1,6 +1,6 @@
 // .join(), .slice(), .splice(), .shift(), .unshift(), and .concat()
 
-// splices mutates the array, slice doesnt
+// splices mutates the array, slice doesnt,, mutates = updating the initial array
 
 const groceryList = [
     "orange juice",

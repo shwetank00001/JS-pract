@@ -43,8 +43,10 @@ const numberClusters = [
 
 const target = numberClusters[2];
 console.log(target);
+
 const target1 = numberClusters[2][1];
 console.log(target1);
+
 const target2 = numberClusters[3][1][0];
 console.log(target2);
 
