@@ -3,7 +3,7 @@ console.log(groceryList);
 groceryList[1] = "avocados";
 console.log(groceryList);
 
-// let and const difference
+// let and const difference- adding commit changes
 let condiments = ["Ketchup", "Mustard", "Soy Sauce", "Sriracha"];
 
 const utensils = ["Fork", "Knife", "Chopsticks", "Spork"];
