@@ -16,8 +16,6 @@ console.log(condiments);
 utensils[3] = "Spoon";
 console.log(utensils);
 
-utensils[3] = "Spoon";
-console.log(utensils);
 
 
 //  length
