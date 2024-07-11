@@ -71,7 +71,6 @@ async function updateThings ( req, res ) {
 
         thing = await Things.findByIdAndUpdate(req.params.id, req.body)
 
-
         res.status(200).json({
             success : true,
             thing
