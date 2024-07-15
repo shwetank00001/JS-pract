@@ -36,6 +36,10 @@ console.log(pastaIndex);
 
 const test = ["1", "2", "3", "$"]
 console.log(test.join(" ^ "))
+const testStr = "1 ^ 2 ^ 3 ^ $"; // converted Arry to str using split
+console.log(testStr.split('^'))
+
+
 
 
 const test2 = ["12", "213", "313", "$13"];

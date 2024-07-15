@@ -1,11 +1,10 @@
-const fruits = ["Yello", "Apple", "Orange", "Apple", "Mango"];
+const fruits = ["Yello", "Apple", "Orange", "Apple", "Mango", 'Apple'];
 let count = 0;
 
-for ( i = 0; i<fruits.length; i++){
-    if(i==="Apple"){
-        return count+1
+const ele = fruits.map(function(item){
+    if(item === "Apple"){
+        count = count + 1
     }
-    else return count
-}
 
+})    
 console.log(count)
