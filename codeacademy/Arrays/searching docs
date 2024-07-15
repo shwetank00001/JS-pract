@@ -1,0 +1,2 @@
+indexOf() = The indexOf() method searches an array for an element value and returns its position.
+this will only tell about the index of 1st occurrence of that particular element

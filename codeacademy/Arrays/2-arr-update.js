@@ -1,5 +1,6 @@
 let groceryList = ["bread", "tomatoes", "milk"];
 console.log(groceryList);
+
 groceryList[1] = "avocados";
 console.log(groceryList);
 
@@ -10,6 +11,7 @@ const utensils = ["Fork", "Knife", "Chopsticks", "Spork"];
 
 condiments[0] = "Mayo";
 console.log(condiments);
+
 condiments = ["Mayo"];
 console.log(condiments);
 
