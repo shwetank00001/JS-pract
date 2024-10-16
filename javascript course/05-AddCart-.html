@@ -12,8 +12,16 @@
                 ">
             +2
         </button>
-        <button onclick="console.log(cartQty = cartQty +3)">+3</button>
-        <button onclick="console.log(cartQty=0)">Reset Cart</button>
+
+        <button onclick="
+        cartQty += 3
+        console.log(`Cart Quantity is: ${cartQty}`)
+        ">+3</button>
+
+        <button onclick="
+        console.log(cartQty=0)
+        console.log('Cart was reset')
+        ">Reset Cart</button>
     </body>
 
     <script>
