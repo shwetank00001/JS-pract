@@ -19,9 +19,20 @@
         ">+3</button>
 
         <button onclick="
+        cartQty +=4
+        console.log(`Cart Quantity is: ${cartQty}`)
+        "
+        >+4</button>
+
+        <button onclick="
         console.log(cartQty=0)
         console.log('Cart was reset')
         ">Reset Cart</button>
+
+        <button onclick="
+        cartQty--
+        console.log(`Cart Value is: ${cartQty}`)
+        ">Remove from cart</button>
     </body>
 
     <script>
