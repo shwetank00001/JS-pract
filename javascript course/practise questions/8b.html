@@ -1,0 +1,18 @@
+<script>
+    const object1= {
+        name: "Shwe",
+        age: 25,
+        fun : function sum(x, y){
+            console.log(x+y)
+        }
+    }
+
+    object1.year = 1999
+    object1['first-car-when'] = 2025
+
+    object1.fun(2,2)
+
+    let a = JSON.stringify(object1)
+    console.log(object1)
+    console.log(a)
+</script>
