@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head></head>
+
+    <body>
+        <button
+            onclick="
+        let computeMove = ''
+        const randomNum = Math.random()
+        if(randomNum > 0 && randomNum < 1/3){
+            computeMove= 'Rock'
+            alert(`You select Rock and computer selected ${computeMove}. Its a draw`)
+        } else if(randomNum > 1/3 && randomNum < 2/3){
+            computeMove= 'Paper'
+             alert(`You select Rock and computer selected ${computeMove}. Its a Lose`)
+        } else if(randomNum > 2/3 && randomNum < 1){
+            computeMove = 'Scissor'
+             alert(`You select Rock and computer selected ${computeMove}. Its a win`)
+        }
+            "
+        >
+            Rock
+        </button>
+
+        <button>Paper</button>
+        <button>Scissor</button>
+
+        <script></script>
+    </body>
+</html>

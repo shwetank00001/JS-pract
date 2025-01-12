@@ -1,0 +1,35 @@
+Size = The length property returns the length (size) of an array = fruits.length;
+
+fruits.toString();= The JavaScript method toString() converts an array to a string of (comma separated) array values. = fruits.toString();
+
+At Method= 
+THe exact index of the 3rd element or an nth element = array.at(4) or array.at(nth)
+also for the array we can get like this= console.log(array[3]) or console.log(array[nth])
+Note: 
+The at() method returns an indexed element from an array.
+The at() method returns the same as [].
+
+Join method = This will convert the array to string and separate it with the mentioned operator.
+The join() method also joins all array elements into a string.
+It behaves just like toString(), but in addition you can specify the separator:
+arr.join("*")
+
+Concat = concat() method creates a new array by merging (concatenating) existing arrays and it always returns a new array.
+arrayFirst.concat(array2nd)
+NOte:
+The concat() method does not change the existing arrays. It always returns a new array.
+The concat() method can take any number of array arguments.
+
+Splice: method can be used to add new items to an array.
+arr.splice(2,0)
+2 = at what index you want new elements yoou want to add.
+0 = how many items you want to delete 
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");
+console.log(fruits)
+Output- [ 'Banana', 'Orange', 'Lemon', 'Kiwi', 'Apple', 'Mango' ]
+
+SLice = slice will slice the array and arrayName.slice(1,4) =? this will take the value from 1 index to the 4-1 = 3rd index.
+(n,m) will delete values fr nth indexz to m-n index.     
+
+

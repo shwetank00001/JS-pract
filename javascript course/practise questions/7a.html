@@ -1,0 +1,52 @@
+<script>
+    function greet(name){
+        console.log(`Hello ${name}`)
+    }
+
+    greet('Shwetank')
+    greet()
+
+    function convertToFaren(celsius){
+        const valueInFaren = (celsius * 9/5) +32
+        console.log(valueInFaren)
+    }
+    convertToFaren(25)
+
+    function convertToCelsius(fahren){
+        const valueInCelsius = (fahren - 32) * 5/9
+        console.log(valueInCelsius)
+    }
+    convertToCelsius(86)
+
+    function convertTemp(degress, unit){
+        if(unit === 'C'){
+            convertToFaren(degress)
+        }
+        else convertToCelsius(degress)
+    }
+    
+    convertTemp(25, 'C')
+    convertTemp(86, 'F')
+
+    function convertLength(len, from ,to){
+        if(from === "miles" && to === "km"){
+            console.log(`${len*1.6} km`)
+        }
+        else if(from === "km" && to === "miles"){
+            console.log(`${len / 1.6} miles`)
+        }
+        else if(from === "km" && to === "ft"){
+            console.log(`${len* 3281} miles`)
+        }
+        else if(from === "miles" && to === "ft"){
+            console.log(`${len * 5280} miles`)
+        }
+        else console.log(`Invalid Unit`)
+    }
+
+    convertLength(50, 'miles', 'km')
+    convertLength(32, 'km', 'miles')
+    convertLength(5, 'km', 'ft')
+    convertLength(5, 'km', 'lbs')
+
+</script>

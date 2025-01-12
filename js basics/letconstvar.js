@@ -1,4 +1,4 @@
-var x = 5 
+
 if(true){
     var x= 10
     console.log(x)
@@ -6,7 +6,7 @@ if(true){
     var x = 12
     console.log(x)
 }
-
+ 
 console.log(x)
 
 
@@ -16,8 +16,13 @@ if(true){
     let y= 10
     console.log(y)
 
+<<<<<<< HEAD:letconstvar.js
     // let y= 15
     // console.log(y)
+=======
+     y= 15
+    console.log(y)
+>>>>>>> f436a2c2820b434e978796e25f59ae896b622ec0:js basics/letconstvar.js
 }
 console.log(y)
 

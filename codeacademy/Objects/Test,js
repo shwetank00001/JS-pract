@@ -1,0 +1,6 @@
+const a = {
+    name : "shwetank",
+    age : 25
+}
+
+console.log(a[name])

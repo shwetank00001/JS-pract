@@ -1,3 +1,6 @@
+console.log("A" + "B" + "C")
+console.log("A" - "B" + "C")
+
 var myObject = {
     foo: "bar",
     func: function() {

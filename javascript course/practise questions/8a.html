@@ -1,0 +1,50 @@
+<script>
+    const product1 = {
+        name: "Basketball",
+        price: 2095
+    }
+    console.log(product1)
+
+    product1.price = product1.price + 500
+    console.log(product1)
+
+    console.log(product1['delivery-time'] = '3 Days')
+    console.log(product1)
+
+    const product2 = {
+        name: "Football",
+        price: 2495
+    }
+
+    function comparePrice(item1, item2){
+        if(item1.price > item2.price){
+            console.log(item2.name)
+        }
+        else if(item1.price > item2.price ){
+            console.log(item1.name)
+        }
+    }
+    comparePrice(product1, product2)
+
+    function isSameProd(item1, item2){
+        if(item1.price === item2.price){
+            console.log(true)
+        }
+        else if(item1.price > item2.price ){
+            console.log(false)
+        }  
+    }
+    isSameProd(product1, product2)
+
+    console.log('Good Morning'.toLowerCase())
+    console.log('test'.repeat(3))
+
+        function convertToFaren(celsius){
+        const valueInFaren = (celsius * 9/5) +32
+        console.log(valueInFaren)
+        localStorage.setItem("temperature", valueInFaren)
+    }
+    convertToFaren(25)
+
+
+</script>
