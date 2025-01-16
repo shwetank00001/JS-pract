@@ -1,3 +1,5 @@
+
+// this is a block in JS. {}
 {
     var a = 10
     let b = 20
@@ -8,6 +10,7 @@
 }
 
 
+// Shadowing example 
 let x = 10;
 {
     let x = 50
@@ -16,6 +19,8 @@ let x = 10;
 console.log(x)
 
 
+
+// Shadowing Another example
 let u = 10
 {
     let v = 20
@@ -28,12 +33,15 @@ let u = 10
 console.log(u)
 
 
+
+// we can do this since let is in block memory and var in global
 var a_ = 50
 {
     let a_ = 500
 }
 
 
+// Lexical scoping using const
 const blo = 50
 {
     const blo = 100
