@@ -1,10 +1,10 @@
 
-let x = 7
+var a = 7
 function alldata(){
     console.log("SSS")
 }
 alldata();
-console.log(x);
+console.log(a);
 console.log(alldata);
 // var all = () => {
 //     console.log ("hi")
@@ -12,3 +12,5 @@ console.log(alldata);
 // var all3 = () => {
 //     console.log ("hi")
 // }
+
+
