@@ -7,10 +7,13 @@ function x(){
     function y(){
         console.log(a)
     }
+    var a = 100
     return y;  // this returns the value of x() = func y()
+
 }
 var z = x()
 console.log("x value => ", z)
+z()
 
 // function  abc(){
 //     var _ = 50
