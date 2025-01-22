@@ -35,18 +35,18 @@ d(1,2) // arguements
 
 //FIRST CLASS FUNCTIONS =  Ability of a function to be used like a value = First class Citizens
 function first(){
-    return function child(){
-        
+    return function child(){  
     }
 }
 console.log(first())
 
 function second(param1){
-    console.log(param1)
+    console.log("param1=" ,param1)
+    console.log("THis is second function")
 }
-
 second(function secondchild(){
-
+    console.log("This is secondChild Function")
+    return secondchild
 })
 
 

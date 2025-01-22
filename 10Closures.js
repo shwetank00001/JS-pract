@@ -9,8 +9,7 @@ function x(){
         console.log(a)
     }
     var a = 100
-    return y;  // this returns the value of x() = func y()
-
+    return y;  // this returns the value of x() = func y
 }
 var z = x()
 console.log("x value => ", z)
