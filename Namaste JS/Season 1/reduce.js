@@ -19,3 +19,12 @@ const ele = a.reduce(function(acc,curr){
     return acc
 }, 0)
 console.log(ele)
+
+const max = a.reduce(function(acc, curr){
+    if(curr > acc ){
+        acc = curr
+    }
+    return curr
+},0)
+
+console.log(max)
