@@ -6,12 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    div{
+        min-width: 100px;
+        min-height: 100px; 
+        padding: 30px;
+        border: 2px solid black;
+    }
+/* 
+     .grandParent{
+        width: 300px;
+        height: 300px;
+        border: 2px solid black;
+        padding: 10px;
+     }
+
+     .parent{
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        border: 2px solid black;
+     }
+
+     .child{
+        width: 100px;
+        padding: 10px;  
+        height: 100px;
+        border: 2px solid black;
+     } */
+</style>
 <body>
-    <h2>ez</h2>
-    <input type="text" onkeyup="betterFunc()" />
+    <!-- <h2>ez</h2>
+    <input type="text" onkeyup="betterFunc()" /> -->
+    <div class="grandParent">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
 <p id="demo"></p>
 
-<script src="./localStorage.js">
+<script src="./Event Bubbling, Capturing .js">
 </script>
 </body>
 </html
