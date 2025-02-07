@@ -24,6 +24,6 @@ Function.prototype.myBind = function(...args){
     }
 }
 
-let usingBind2 = printName.myBind(names, "NOidaaa")   // we want myBind to work same as bind, we know
+let usingBind2 = printName.myBind(names, "Noidaaa")   // we want myBind to work same as bind, we know
 usingBind2("Uttar") // we are doing to this get the value, but we know that PRINTNAME method will be executed.
 // So we will add PRINTNAME() in our function prototype
