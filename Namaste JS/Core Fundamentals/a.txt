@@ -1,0 +1,12 @@
+Array 
+let a = []
+
+a.length // counts the length of arr
+a.push("value") // adds at the end
+a.unshift("value") // adds in front of the array
+a.pop() //removes from end
+a.shift() // removes from the start
+
+a.splice(1param, 2param, 3 params)  // to remove something from the middle - Updates the og array
+takes 3 params - 1 and 2 are index, 1st is the index from where we begin deletion. 2nd Param = Number of items to delete.
+
