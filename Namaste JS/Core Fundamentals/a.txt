@@ -7,6 +7,26 @@ a.unshift("value") // adds in front of the array
 a.pop() //removes from end
 a.shift() // removes from the start
 
+[
 a.splice(1param, 2param, 3 params)  // to remove something from the middle - Updates the og array
-takes 3 params - 1 and 2 are index, 1st is the index from where we begin deletion. 2nd Param = Number of items to delete.
+takes 3 params - 1 and 2 are index, 1st is the index from where we begin deletion. 
+2nd Param = Number of items to delete.
+3rd param is the values that we add in place of the deleted values.
+a.splice(2,4) // will delete from 2nd index and will delete 4 items from 2nd index and will modify a.
+
+let array = ['today', 'was', 'not', 'so', 'great'];
+array.splice(2, 2); //array would have the value ['today', 'was', 'great'].
+]
+[
+a.slice() // slice behaves just like splice but it doesnt update the OG array. It takes the value to new array
+takes 2 params -> (param1 , param2 )
+param1 = from where to start deletion/extraction
+param2=  where to stop deletion/extraction - but will not include this.
+a.slice(2,4) // will remove from 2nd index just before 4th index. 
+
+let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+let todaysWeather = weatherConditions.slice(1, 3);  // ['snow', 'sleet']
+]
+
+...Spread Operator-> Copies the whole array to another array. (DEEP Copy)
 
