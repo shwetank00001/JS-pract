@@ -3,6 +3,7 @@
 // showOrderSummary
 // updateWallet\
 // we have to call each other after wach other
+//Promise Chaining solves the issue of Callback hell.
 
 
 let cart = ["Need a better job", "A good LPA", "Right away!"]
