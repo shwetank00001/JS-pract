@@ -24,6 +24,7 @@ const stud2 = {
 // and then we .call this statement to pass in the value, WHERE 'THIS' SHOULD POINT TO;
 
 stud1.printName.call(stud2)
+// here the 'this' from pritName will point to stud2.
 
 
 
