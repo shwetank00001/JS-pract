@@ -16,17 +16,42 @@ function Booklist() {
       author: "Author 3",
     },
   ];
-  const names = ["L1", "L2", "L3"];
-  const newNames = names.map(function (item) {
-    // const id = new Date().getTime()
-    return <div key={item.id}>{item}</div>;
-  });
+
+  const ele = bookArray.map(function(item){
+    // return "hello"
+    return (
+      // <>
+      // <h1>{title}</h1>
+      // <h1>{author}</h1>
+      // </>
+      <Book image = {item.image}
+        title = {item.title}
+        author = {item.author}
+      />
+    )
+  })
+
+  // const names = ["L1", "L2", "L3"];
+  // const newNames = names.map(function (item) {
+  //   // const id = new Date().getTime()
+  //   return <div key={item.id}>{item}</div>;
+  // });
+
+
   return (
     <section className="booklist">
       {/* <Book /> */}
-      {newNames}
+      {ele}
     </section>
   );
 }
 
 export default Booklist;
+
+//NOTES
+/* Map and NonMap - We wont get any rendering issues if we will use a string directly into JSX. 
+Issues only in Objects 
+Map returns a new array
+
+hellohello // It give us this since we have 2 obects in array. [1,2]
+*/

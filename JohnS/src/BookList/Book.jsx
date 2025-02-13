@@ -16,6 +16,7 @@ function Book(props) {
   // const title = "React.js For Beginners"
 
   let { image, title, author } = props;
+  console.log(props)
   return (
     <article className="book">
       <img src={image} alt="" />
