@@ -29,4 +29,31 @@ let todaysWeather = weatherConditions.slice(1, 3);  // ['snow', 'sleet']
 ]
 
 ...Spread Operator-> Copies the whole array to another array. (DEEP Copy)
+let thisArray = ['sage', 'rosemary', 'parsley', 'thyme'];
+
+let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];
+thatArray would have the value ['basil', 'cilantro', 'sage', 'rosemary', 'parsley', 'thyme', 'coriander'].
+
+indexOf() // helps us to check for the index of an element in an array. It either returns the ele if found and -1 if no value.
+// will give the index of 1st occurrence of any ele.
+let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
+fruits.indexOf('dates'); // -1
+ruits.indexOf('oranges'); // 2
+
+JavaScript offers several built in methods that each iterate over arrays in slightly different ways to achieve different results 
+(such as every(), forEach(), map(), etc.)
+
+
+// OBJECTS
+But what if we just wanted to know if an object has a specific property? JavaScript provides us with two different ways to do this. 
+One uses the hasOwnProperty() method and the other uses the 'in' keyword. 
+users.hasOwnProperty('Alan');
+'Alan' in users;
+Both of these would return true.
+
+  if(userObj.hasOwnProperty('Alan') && userObj.hasOwnProperty('Jeff') && userObj.hasOwnProperty('Sarah') &&userObj.hasOwnProperty('Ryan') ){
+    return true;
+  }
+
+  else return false
 
