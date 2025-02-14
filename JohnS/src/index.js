@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Basics from './useEffect/Basics'
+import Basics from './useEffect/ConditionalEffects'
 import './index.css'
 
 
