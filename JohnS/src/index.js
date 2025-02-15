@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import RedBasics from './useReducer/RedBasics'
+import RedBasics from './useReducer/ReducerFunc'
 import './index.css'
 
 

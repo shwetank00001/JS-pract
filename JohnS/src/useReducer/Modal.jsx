@@ -1,14 +1,9 @@
 import React from 'react'
 
-const Modal = (props) => {
-  const [flip, setFlip] = React.useState(true)
-
-  setTimeout(() => {
-    setFlip(false)
-  }, 3000)
+const Modal = (prop) => {
   return (
     <div>
-      {flip && <p>{props.modalContentProp}</p>}
+      <p>{prop.modalProp}</p>
     </div>
   )
 }
