@@ -3,20 +3,43 @@ import { dataMain } from './data'
 import Modal from './Modal'
 
 const RedBasics = () => {
-    const [people, setPeople] = React.useState(dataMain)
-
     const [singlePerson, setSingle] = React.useState([])
 
-    const [showModal, setShow] = React.useState(false)
+    // WIll replace these two and use the in a reducer fn
+    // const [people, setPeople] = React.useState(dataMain)
+    // const [showModal, setShow] = React.useState(false)
+    const defaultState= {
+        people: dataMain,
+        showModal: false,
+        modalContent: "Hi"
+    }
+    let reducer = function(state,action){
+        if(action.type ==="ADD"){
+            const newValue = [...state.people, action.payload]
+            return {
+                people: newValue,
+                showModal: true,
+                modalContent: "Item added!"
+            }
+        }
+        if (action.type === "DEL"){
+            const newValue = state.people.filter(function(item){
+                return  item.id !== action.payload
+            })
+            return {
+                people: newValue,
+                showModal: true,
+                modalContent: "Item Deleted!"
+            }
+        }
+    }
+    const [state, dispatch] = React.useReducer(reducer, defaultState)
 
     let remove= function(idParam){
-        const newData = people.filter(function(item){
-            return item.id !== idParam
-        })
-        setPeople(newData)
+        dispatch({type: "DEL", payload:idParam})
     }
 
-    const ele = people.map(function(item){
+    const ele = state.people.map(function(item){
         return (
             <div key={item.id}>
                 <p>{item.name}</p>
@@ -31,15 +54,16 @@ const RedBasics = () => {
             id: new Date().getTime(),
             name: singlePerson
         }
-        setPeople(function(item){
-            return [...item, newData]
-        })
 
-        setShow(true)
+        dispatch({type: "ADD", payload: newData})
+        // setPeople(function(item){
+        //     return [...item, newData]
+        // })
+
     }
   return (
     <div>
-        {showModal && <Modal showModal1 = {showModal} />}
+        {state.showModal && <Modal modalContentProp = {state.modalContent}/>}
         <form onSubmit={handleSubmit}>
             <input type='text' placeholder='Add a name' name="singlePerson" value={singlePerson} onChange={(e) => setSingle(e.target.value)} />
             <button type='submit'>Submit</button>
