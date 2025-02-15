@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Fetchdata from './useEffect/Fetchdata'
+import Basics from './useRef/Basics'
 import './index.css'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Fetchdata />
+  <Basics />
   // <React.StrictMode>
   // </React.StrictMode>
 );
