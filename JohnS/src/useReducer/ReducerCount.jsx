@@ -13,7 +13,7 @@ const ReducerCount = () => {
         count: 0
     }
 
-    const [state, dispatch] = useReducer(reducer, defaultState)
+        const [state, dispatch] = useReducer(reducer, defaultState)
 
     function add(){
         dispatch({type: "ADD"})

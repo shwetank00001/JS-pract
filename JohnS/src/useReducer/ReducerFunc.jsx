@@ -3,8 +3,9 @@ import { dataMain } from './data'
 import Modal from './Modal'
 
 const ReducerFunc = () => {
-    const [name, setName] = useState('')
-    let reducer = function(state, action){
+    const [name, setName] = useState('')  //1
+
+    let reducer = function(state, action){ //4
         if(action.type ==="add"){
             const newValue = [...state.peopleList, action.payload]
             return {
@@ -25,20 +26,20 @@ const ReducerFunc = () => {
         }
     }
     
-    const defaultState = {
+    const defaultState = {  //5
         // each key behaves like an state
         peopleList: dataMain,
         showModal: false,
         modalContent : ""
     }
     // dispatch = in order to affect our state, we dispatch an action for it.
-    const [state, dispatch] = useReducer(reducer, defaultState)  // reducer is a function
+    const [state, dispatch] = useReducer(reducer, defaultState)  // reducer is a function  [3]
 
     let rem = function(itemParam){
         dispatch({type:"del", payload: itemParam})
     }
 
-    const ele = state.peopleList.map(function(item){
+    const ele = state.peopleList.map(function(item){ // used to render 2
         return (
             <div key= {item.id}>
                 {item.name}
@@ -58,8 +59,8 @@ const ReducerFunc = () => {
   return (
     <div>
         {state.showModal && <Modal modalProp = {state.modalContent}/>}
-        <form onSubmit={handleSubmit}>
-            <input type='text' name='name' value={name} onChange={(e) => setName(e.target.value)} />
+        <form onSubmit={handleSubmit}> 
+            <input type='text' name='name' value={name} onChange={(e) => setName(e.target.value)} />  {/* 2 */}
             <button type='submit'>Submit</button>
         </form>
         {ele}
