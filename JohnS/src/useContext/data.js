@@ -5,7 +5,7 @@ export const dataMain = [
     },
     {
         id: 2,
-        name: "Swapnil"
+        name: "Office"
     },
     {
         id: 3,
