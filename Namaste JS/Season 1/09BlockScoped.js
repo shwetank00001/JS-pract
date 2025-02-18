@@ -45,9 +45,10 @@ var a_ = 50
 const blo = 50
 {
     const blo = 100
-    console.log(blo)
+  
     {
-        const blo = 99
+
+        console.log(blo)
 
     }
 }
