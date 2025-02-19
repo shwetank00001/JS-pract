@@ -41,6 +41,7 @@ let SingleData = function(props){
         people.map(function(item){
           return (
             <div key={item.id}>
+              
               <h3>{item.name}</h3>
               <button onClick={() => removeData(item.id)}>Del</button>
               
