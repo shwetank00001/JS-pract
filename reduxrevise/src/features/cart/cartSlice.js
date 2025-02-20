@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const defaultState = {
-    cart: [],
+    cartItems: [],
     amount: 0,
     total: 0,
     isLoading: true
@@ -13,5 +13,6 @@ const defaultState = {
     })
 
 console.log(cartSlice);
+//{name: 'cart', actions: {…}, caseReducers: {…}, reducer: ƒ, getInitialState: ƒ, …}
 
 export default cartSlice
