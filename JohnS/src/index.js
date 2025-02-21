@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import {ReactMe} from './ReactMemoMethod/ReactMe';
-import Fetch from './Fetch/Fetch'
+import Fetch from './Fetch/Test'
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
