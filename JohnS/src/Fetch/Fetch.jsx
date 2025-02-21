@@ -5,11 +5,19 @@ function Fetch(){
     const [productList, setList] = useState([])
     const url = "https://fakestoreapi.com/products";
 
-    const [newInput, setInput] = useState()
+    const [newTitle, setTitle] = useState()
 
     function reducer(state, action){
         if(action.type === "add"){
             const value = [...state.list, action.payload]
+            return {
+                list: value
+            }
+        }
+        if(action.type === "remove"){
+            const value = state.list.filter(function(item){
+                return item.id !== action.payload
+            })
             return {
                 list: value
             }
@@ -25,6 +33,8 @@ function Fetch(){
         return (
             <div key={item.id}>
                 <h3>{item.title}</h3>
+                <button onClick={ () => remove(item.id)}>Remove</button>
+
             </div>
         )
     })
@@ -46,17 +56,21 @@ function Fetch(){
 
     const submit = function(e){
         e.preventDefault()
-        console.log(newInput)
+        console.log(newTitle)
         const newData = {
-            id: new Date().getTime(), title : newInput
+            id: new Date().getTime(), title : newTitle
         }
         dispatch({type:"add", payload: newData})
+    }
+    
+    let remove = function(itemParam){
+        dispatch({type: "remove", payload:itemParam})
     }
 
     return(
         <div className='hero'>
             <form onSubmit={submit}>
-                <input name='newInput' value={newInput} onChange={(e) => setInput(e.target.value)} type='text' placeholder='A new Item to the list..' />
+                <input name='newInput' value={newTitle} onChange={(e) => setTitle(e.target.value)} type='text' placeholder='A new Item to the list..' />
                 <button type='submit'>Add</button>
             </form>
             <div>
@@ -66,7 +80,7 @@ function Fetch(){
                     <div className='heroItem' key = {item.id}>
                         <h3>{item.title}</h3>
                         <p>{item.rating.count}</p>
-                        <pre>{item.title}</pre>
+                        <pre>{item.description}</pre>
                                         <br/>
                                         <hr/>
                     </div>
