@@ -1,12 +1,44 @@
 import React, {useEffect, useState, useReducer} from 'react'
 import './style.css'
+import Loading from './Loading';
 
 function Fetch(){
     const [productList, setList] = useState([])
+    const [maxPrice, setMaxPrice] = useState([])
+
+
+    // const maxNumber = maxPrice.reduce((max, num) => (num > max ? num : max), maxPrice[0]);
     const url = "https://fakestoreapi.com/products";
+    let getData =  async () => {
+        try {
+            const response = await fetch(url);
+            const jsonData = await response.json();
+            setList(jsonData)
+            setLoading(false)
+            console.log(jsonData.map(item => item.price))
+            setMaxPrice(jsonData.map(item => item.price))
+            
+            setMaxPrice(jsonData.price)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        getData();
+
+        console.log(maxPrice)
+    }, [])
+
+    console.log("->", productList)
 
     const [newTitle, setTitle] = useState()
+    const [newDesc, setDesc] = useState()
+    const [newRating, setRating] = useState()
+    
+    const [isLoading, setLoading] = useState(true)
 
+    // -----------------------------REDUCER-----------------
     function reducer(state, action){
         if(action.type === "add"){
             const value = [...state.list, action.payload]
@@ -29,64 +61,70 @@ function Fetch(){
 
     const [state, dispatch] = useReducer(reducer, defaultState)
 
+    // RENDERING MY REDUCER 
     const addedDataList = state.list.map(function(item){
         return (
-            <div key={item.id}>
+            <div className='heroItem' key={item.id}>
                 <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+                <p>{item.rating}</p>
                 <button onClick={ () => remove(item.id)}>Remove</button>
-
+                <br/>
+                <hr/>
             </div>
         )
     })
 
-    let getData =  async () => {
-        try {
-            const data = await fetch(url);
-            const jsonData = await data.json();
-            setList(jsonData)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    useEffect(() => {
-        getData();
-    }, [])
-    console.log("->", productList)
-
+    //FORM SUBMIT BUTTON
     const submit = function(e){
         e.preventDefault()
         console.log(newTitle)
         const newData = {
-            id: new Date().getTime(), title : newTitle
+            id: new Date().getTime(), title : newTitle, rating: newRating, desc: newDesc
         }
         dispatch({type:"add", payload: newData})
+        setDesc('')
+        setRating('')
+        setTitle('')
     }
-    
-    let remove = function(itemParam){
-        dispatch({type: "remove", payload:itemParam})
-    }
+
+        let remove = function(itemParam){
+            dispatch({type: "remove", payload:itemParam})
+        }
 
     return(
         <div className='hero'>
-            <form onSubmit={submit}>
-                <input name='newInput' value={newTitle} onChange={(e) => setTitle(e.target.value)} type='text' placeholder='A new Item to the list..' />
+        {isLoading ? <Loading /> :  <>
+        <h1>Max Price of the item is: {}</h1>
+            <form className='formStyle' onSubmit={submit}>
+                
+                <label htmlFor='title'>Title: </label>
+                <input id='title' name='newInput' value={newTitle} onChange={(e) => setTitle(e.target.value)} type='text' placeholder='A title..' />
+                
+                <label htmlFor='desc'>Description: </label>
+                <input id='title' name='newDesc' value={newDesc} onChange={(e) => setDesc(e.target.value)} type='text' placeholder='Description..' />
+                
+                <label htmlFor='rating'>Rating:</label>
+                <input id='rating' name='newRating' value={newRating} onChange={(e) => setRating(e.target.value)} type='text' placeholder='Rating here...' />
+                
                 <button type='submit'>Add</button>
             </form>
+
             <div>
                 {addedDataList}
-            {productList.map(function(item){
-                return (
-                    <div className='heroItem' key = {item.id}>
-                        <h3>{item.title}</h3>
-                        <p>{item.rating.count}</p>
-                        <pre>{item.description}</pre>
-                                        <br/>
-                                        <hr/>
-                    </div>
-                )
-            })}
+                {productList.map(function(item){
+                    return (
+                        <div className='heroItem' key = {item.id}>
+                            <h3>{item.title}</h3>
+                            <p>{item.description}</p>
+                            <p>{item.rating.count}</p><p>Price: {item.price}</p>
+                            <br/>
+                            <hr/>
+                        </div>
+                    )
+                })}
             </div>
+            </>}
         </div>
     )
 }
