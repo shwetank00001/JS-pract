@@ -17,6 +17,8 @@ function CleanupPractise(){
             console.log("Event LISTENER Removed ")
         }
     }, [size])
+
+    // The cleanup fn runs before applying a new effect imp
     return(
         <>
         <h1>{size}</h1>
