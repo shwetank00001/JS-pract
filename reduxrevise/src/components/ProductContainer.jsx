@@ -3,6 +3,7 @@ import SingleProduct from './SingleProduct'
 import {  useDispatch,useSelector } from 'react-redux'
 import { clearCart } from '../feature/cart/cartSlice'
 
+
 const ProductContainer = () => {
 
     const dispatch = useDispatch()
@@ -18,6 +19,7 @@ const ProductContainer = () => {
         return (
             <SingleProduct
                 key = {item.id} 
+                idProp = {item.id}
                 imgProp = {item.img}
                 titleProp = {item.title}
                 priceProp = {item.price}price
