@@ -10,7 +10,7 @@ const CleanupEffect = () => {
         window.addEventListener("resize", newSize )
         console.log("Main Effect")
         return function(){
-            window.removeEventListener("reszie", newSize)
+            window.removeEventListener("resize", newSize)
             console.log("Cleanup effect")
         }
     }, [size])
