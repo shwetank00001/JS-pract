@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { removeItem } from '../feature/cart/cartSlice'
+import { removeItem, increamAmt, descreaseAmt } from '../feature/cart/cartSlice'
 
 
 const SingleProduct = (props) => {
@@ -14,9 +14,9 @@ const SingleProduct = (props) => {
         <h3>{props.titleProp}</h3>
         <p>$ {props.priceProp}</p>
         <button onClick={() => dispatch(removeItem(props.idProp))} >Remove</button>
-        <button>-</button>
+        <button onClick={() => dispatch(descreaseAmt())}>-</button>
         <button>{amount}</button>
-        <button>+</button>
+        <button onClick={() => dispatch(increamAmt())}>+</button>
     </div>
   )
 }

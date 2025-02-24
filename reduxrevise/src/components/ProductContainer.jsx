@@ -1,7 +1,7 @@
 import React from 'react'
 import SingleProduct from './SingleProduct'
 import {  useDispatch,useSelector } from 'react-redux'
-import { clearCart } from '../feature/cart/cartSlice'
+import { clearCart, totalAmt } from '../feature/cart/cartSlice'
 
 
 const ProductContainer = () => {

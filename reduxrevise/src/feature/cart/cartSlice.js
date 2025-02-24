@@ -29,22 +29,29 @@ const cartSlice = createSlice({
             console.log(action.payload)
             return {
                 cartItem: newValue,
-                amount: 0,
+                amount: 1,
                 total:0,
                 isLoading: true
             }
             // state.cartItem = state.cartItem.filter(function(item){
             //     return item.id !== action.payload
-                
-
             // })
-            
+        },
+        increamAmt : function(state,action){
+            state.amount = state.amount +1
+        },
+        descreaseAmt : function(state,action){
+            state.amount = state.amount - 1
+        },
+        totalAmt : function(state, action){
+            state.total = state.total  + state.cartItem.price
         }
+
     }
 })
 
 console.log(cartSlice)
 
-export const {clearCart, removeItem} = cartSlice.actions
+export const {clearCart, removeItem, increamAmt, descreaseAmt, totalAmt} = cartSlice.actions
 
 export default cartSlice.reducer
