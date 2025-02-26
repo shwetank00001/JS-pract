@@ -52,3 +52,9 @@ const blo = 50
 
     }
 }
+
+
+    let ab = 10;
+    {
+        console.log(ab)
+    }

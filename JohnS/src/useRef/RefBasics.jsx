@@ -1,6 +1,6 @@
 import React , {useRef}from 'react'
 
-const Basics = () => {
+const RefBasics = () => {
   const refContainer = useRef(null)
   const subRef = useRef(null)
 
@@ -26,4 +26,4 @@ const Basics = () => {
   )
 }
 
-export default Basics
+export default RefBasics

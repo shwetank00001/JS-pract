@@ -7,7 +7,7 @@ const PeopleContext = React.createContext()
 const ContextAPI = () => {
 
   const [people, setPeople] = React.useState(dataMain)
-  const removeData =function(idParam){
+  const removeData = function(idParam){
     return (
       setPeople(function(item){
         return item.filter(function(item){

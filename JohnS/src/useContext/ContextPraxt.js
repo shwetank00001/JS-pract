@@ -1,39 +1,34 @@
 import React from 'react'
 import { dataMain } from './data'
 
-const PeopleContext = React.createContext()
-
+const PersonContext = React.createContext()
 const ContextPraxt = () => {
-    const [people, setPeople] = React.useState(dataMain)
 
+    const [peopleData, setPeopleData] = React.useState(dataMain)
   return (
-    <PeopleContext.Provider value={{people}} >
-        <Component1 />
-    </PeopleContext.Provider>
+    <div>
+        <PersonContext.Provider value = {{peopleData}}>
+        <Child1 />
+        </PersonContext.Provider>
+
+    </div>
   )
 }
 
-let Component1= function(){
+export const Child1 = function(){
     return (
-        <div>
-            <h3>This is Component1 rendering compo 2 in it</h3>
-            <Component2 />
-        </div>
-      
+        <Child2/>
     )
-
 }
-
-let Component2 = function(){
-    const {people} = React.useContext(PeopleContext)
+export const Child2 = function(){
+    const {peopleData} = React.useContext(PersonContext)
     return (
         <div>
-            Component 2 data
             {
-                people.map(function(item){
+                peopleData.map(function(item){
                     return (
-                        <div key={item.id}>
-                            {item.name}
+                        <div>
+                            <p>{item.name}</p>
                         </div>
                     )
                 })
