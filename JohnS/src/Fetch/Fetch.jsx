@@ -5,16 +5,15 @@ import Loading from './Loading';
 function Fetch(){
     const [productList, setList] = useState([])
     const [maxPrice, setMaxPrice] = useState([])
-
-
     // const maxNumber = maxPrice.reduce((max, num) => (num > max ? num : max), maxPrice[0]);
-    const url = "https://fakestoreapi.com/products";
+    const url = "https://67bf5cc8b2320ee0501381f5.mockapi.io/ecom";
+    // const url = "https://fakestoreapi.com/products";
     let getData =  async () => {
         try {
             const response = await fetch(url);
             const jsonData = await response.json();
             setList(jsonData)
-            setLoading(false)
+            // setLoading(false)
             console.log(jsonData.map(item => item.price))
             setMaxPrice(jsonData.map(item => item.price))
             
@@ -24,10 +23,24 @@ function Fetch(){
         }
     }
 
+    function debounce(apiParam, delay){
+        let timer;
+        return function(){
+            let context = this,
+            args = arguments;
+            clearTimeout(timer)
+            timer = setTimeout(() => {
+                apiParam.apply(context,args)
+            }, delay)
+        }
+    }
+
+    function bringLoading(){
+        setLoading(true)
+    }
     useEffect(() => {
         getData();
-
-        console.log(maxPrice)
+        window.addEventListener("mouseover", debounce(bringLoading, 5000))
     }, [])
 
     console.log("->", productList)
@@ -36,7 +49,7 @@ function Fetch(){
     const [newDesc, setDesc] = useState()
     const [newRating, setRating] = useState()
     
-    const [isLoading, setLoading] = useState(true)
+    const [isLoading, setLoading] = useState(false)
 
     // -----------------------------REDUCER-----------------
     function reducer(state, action){
@@ -117,7 +130,7 @@ function Fetch(){
                         <div className='heroItem' key = {item.id}>
                             <h3>{item.title}</h3>
                             <p>{item.description}</p>
-                            <p>{item.rating.count}</p><p>Price: {item.price}</p>
+                            <p>{item.rating}</p><p>Price: {item.price}</p>
                             <br/>
                             <hr/>
                         </div>

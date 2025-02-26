@@ -3,7 +3,7 @@ import React from 'react'
 const Loading = () => {
   return (
     <div>
-        <h1>Data Loading...</h1>
+        <h1>Welcome to login Page again.</h1>
     </div>
   )
 }
