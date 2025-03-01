@@ -1,0 +1,10 @@
+.single {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.single > img {
+    height: 400px;
+    width: 400px;
+}

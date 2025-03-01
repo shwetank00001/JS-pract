@@ -3,15 +3,19 @@ import SingleProduct from './SingleProduct'
 import {  useDispatch,useSelector } from 'react-redux'
 import { clearCart, totalAmt } from '../feature/cart/cartSlice'
 
+import { openModal } from '../feature/modal/modalSlice'
+
 
 const ProductContainer = () => {
-
+//use selector is used to access the global state data in our component!
     const dispatch = useDispatch()
-
+    // three ways to pull data from useSelector
     const data = useSelector(function(globalState){
         return globalState.cart.cartItem
     })
+
     const {amount } = useSelector((globalState) => globalState.cart)
+
     const total = useSelector((globalState) => globalState.cart.total)
     console.log(data)
 
@@ -22,7 +26,8 @@ const ProductContainer = () => {
                 idProp = {item.id}
                 imgProp = {item.img}
                 titleProp = {item.title}
-                priceProp = {item.price}price
+                priceProp = {item.price}
+                propAmount = {item.amount}
             />
 
         )
@@ -44,7 +49,10 @@ const ProductContainer = () => {
     </div>
     <div>
     <small>The total value for the selection is :- ${total}</small>
-    <button onClick={() => {dispatch(clearCart())}}>Clear Cart</button>
+    <button 
+        onClick={ dispatch(openModal())}>
+        Clear Cart
+    </button>
     </div>
     </>
   )
