@@ -7,7 +7,6 @@ import { openModal } from '../feature/modal/modalSlice'
 
 
 const ProductContainer = () => {
-    const url = "https://course-api.com/react-useReducer-cart-project"
 //use selector is used to access the global state data in our component!
     const dispatch = useDispatch()
     // three ways to pull data from useSelector

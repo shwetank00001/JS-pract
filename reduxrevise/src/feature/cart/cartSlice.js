@@ -1,5 +1,6 @@
-import {createSlice} from "@reduxjs/toolkit"
+import {createSlice, createAsyncThunk} from "@reduxjs/toolkit"
 import {cartList} from '../../cartItems'
+import { act } from "react"
 
 const initialState = {
     cartItem: cartList,
@@ -8,9 +9,30 @@ const initialState = {
     isLoading: true
 }
 
+    const url = "https://course-api.com/react-useReducer-cart-project"
+
+    const getAllData = (createAsyncThunk, 'cart/getAllData', () => {
+        return fetch(url)
+        .then((res) => res.json())
+        .catch(err => console.log(err))
+    })
+
 const cartSlice = createSlice({
     name: 'cart',
     initialState,
+    extraReducers: {
+        [getAllData.pending] : (state) => {
+            state.isLoading = true;
+        },
+        [getAllData.fulfilled] : (state,action) => {
+            state.isLoading = false;
+            state.cartItem = action.payload
+
+        },
+        [getAllData.pending] : (state) => {
+            state.isLoading = true;
+        },
+    },
     reducers: {
         clearCart: function(state){
             // state.cartItem = []
