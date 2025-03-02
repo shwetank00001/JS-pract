@@ -1,99 +1,76 @@
-import {createSlice, createAsyncThunk} from "@reduxjs/toolkit"
-import {cartList} from '../../cartItems'
-import { act } from "react"
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { cartList } from "../../cartItems";
 
 const initialState = {
     cartItem: cartList,
     amount: 10,
     total: 0,
     isLoading: true
-}
+};
 
-    const url = "https://course-api.com/react-useReducer-cart-project"
+// const url = "https://course-api.com/react-useReducer-cart-project";
+const url = "https://course-api.com/react-useReducer-cart-project";
 
-    const getAllData = (createAsyncThunk, 'cart/getAllData', () => {
-        return fetch(url)
-        .then((res) => res.json())
-        .catch(err => console.log(err))
-    })
+
+export const getAllData = createAsyncThunk("cart/getAllData", async () => {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Failed to fetch data");
+        return await response.json();
+    } catch (error) {
+        throw error;
+    }
+});
 
 const cartSlice = createSlice({
-    name: 'cart',
+    name: "cart",
     initialState,
-    extraReducers: {
-        [getAllData.pending] : (state) => {
-            state.isLoading = true;
-        },
-        [getAllData.fulfilled] : (state,action) => {
-            state.isLoading = false;
-            state.cartItem = action.payload
-
-        },
-        [getAllData.pending] : (state) => {
-            state.isLoading = true;
-        },
-    },
     reducers: {
-        clearCart: function(state){
-            // state.cartItem = []
-            return {
-                cartItem: [],
-                amount: 0,
-                total:0,
-                isLoading: true
-            }
+        clearCart: (state) => {
+            state.cartItem = [];
+            state.amount = 0;
+            state.total = 0;
+            state.isLoading = true;
         },
-
-
-        removeItem: function(state, action){
-            // action.payload comes from the dispatch we used back there 
-            //How i do in reducer i set a new value and then put that new value with the old value of the initial statw
-            const newValue = state.cartItem.filter(function(item){
-                return item.id!== action.payload
-            })
-            console.log(action.payload)
-            return {
-                cartItem: newValue,
-                amount: 1,
-                total:0,
-                isLoading: true
-            }
-            // state.cartItem = state.cartItem.filter(function(item){
-            //     return item.id !== action.payload
-            // })
+        removeItem: (state, action) => {
+            state.cartItem = state.cartItem.filter(item => item.id !== action.payload);
         },
-
-
-        // we can also do this as IMMER is working behind the scenes.
-        increamAmt : function(state,action){
-            const newAmt = state.cartItem.find( item => item.id === action.payload)
-            newAmt.amount = newAmt.amount + 1
+        increamAmt: (state, action) => {
+            const item = state.cartItem.find(item => item.id === action.payload);
+            if (item) item.amount += 1;
         },
-
-        
-        descreaseAmt : function(state,action){
-            const newAmt = state.cartItem.find( item => item.id === action.payload)
-            newAmt.amount = newAmt.amount - 1
+        descreaseAmt: (state, action) => {
+            const item = state.cartItem.find(item => item.id === action.payload);
+            if (item && item.amount > 1) item.amount -= 1;
         },
-
-
-        totalAmt : function(state, action){
+        totalAmt: (state) => {
             let amount = 0;
             let total = 0;
             state.cartItem.forEach((item) => {
-                amount = amount + item.amount
-                total = total + item.amount * item.price
-            })
-            state.amount = amount
-            state.total = total
-
+                amount += item.amount;
+                total += item.amount * item.price;
+            });
+            state.amount = amount;
+            state.total = total;
         }
-
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(getAllData.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(getAllData.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.cartItem = action.payload;
+                console.log(action)
+            })
+            .addCase(getAllData.rejected, (state,action) => {
+                state.isLoading = false;
+                console.log(action)
+            });
     }
-})
+});
 
-console.log(cartSlice)
+export const { clearCart, removeItem, increamAmt, descreaseAmt, totalAmt } = cartSlice.actions;
 
-export const {clearCart, removeItem, increamAmt, descreaseAmt, totalAmt} = cartSlice.actions
-
-export default cartSlice.reducer
+export default cartSlice.reducer;

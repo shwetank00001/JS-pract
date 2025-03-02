@@ -2,7 +2,7 @@ import Navbar from './components/Navbar';
 import ProductContainer from './components/ProductContainer';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { totalAmt } from './feature/cart/cartSlice';
+import { totalAmt, getAllData } from './feature/cart/cartSlice';
 import React from 'react';
 import Modal from './components/Modal';
 
@@ -16,6 +16,10 @@ function App() {
   const isOpen = useSelector(function(globalState){
     return globalState.modal.isOpen
   })
+
+  React.useEffect(() => {
+    dispatch(getAllData())
+  }, [])
 
 
   React.useEffect(() => {
