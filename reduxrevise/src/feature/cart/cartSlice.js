@@ -9,7 +9,7 @@ const initialState = {
 };
 
 // const url = "https://course-api.com/react-useReducer-cart-project";
-const url = "https://course-api.com/react-useReducer-cart-project";
+const url = "/react-useReducer-cart-project";
 
 
 export const getAllData = createAsyncThunk("cart/getAllData", async () => {
