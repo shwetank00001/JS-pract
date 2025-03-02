@@ -8,16 +8,15 @@ import Modal from './components/Modal';
 
 
 function App() {
-  const cartItem = useSelector(function(globalState){
-    console.log(globalState.cart)
-    return globalState.cart
-  })
+  const dispatch = useDispatch()
 
+  const cartItem = useSelector(function(globalState){
+    return globalState.cart.cartItem
+  })
   const isOpen = useSelector(function(globalState){
     return globalState.modal.isOpen
   })
 
-  const dispatch = useDispatch()
 
   React.useEffect(() => {
     dispatch(totalAmt())
@@ -26,8 +25,8 @@ function App() {
   return (
     <div className="App">
       <h1>Will finish redux toolkit.</h1>
-      <Navbar />
       {isOpen && <Modal /> }
+      <Navbar />
       <ProductContainer />
     </div>
   );
