@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Test from "./useContext/Test";
+import FirebaseLearning from "./Firebase Learning/Main";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Test />
+    <FirebaseLearning />
   </BrowserRouter>
 
   // <React.StrictMode>
