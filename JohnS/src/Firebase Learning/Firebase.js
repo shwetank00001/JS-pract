@@ -2,6 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getFirestore} from "@firebase/firestore"   // connecting fire store with react app
+import { getAuth } from "firebase/auth"; // to setup auth
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAdKJ0zIjm-Nwa-X1VThGHpkuhFzTJX_kU",
@@ -21,4 +23,5 @@ export const firestore= getFirestore(app)
 
 //this app contains the initialization of our FIREBASE config
 
+export const auth = getAuth(app)
 

@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import { auth } from "./Firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth"
 
 const Login = () => {
 
@@ -6,7 +8,7 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    let handleSub = function(e){
+    let handleSub = async function(e){
         e.preventDefault()
         const newData = {
             id: new Date().getTime(),
@@ -16,6 +18,13 @@ const Login = () => {
         setUserdata(function(item){
             return [...item, newData]
         })
+
+        try {
+            const userCreds = await createUserWithEmailAndPassword(auth,email,password)
+            console.log("User Signed up with", userCreds)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     const ele = userData.map((item) => {
