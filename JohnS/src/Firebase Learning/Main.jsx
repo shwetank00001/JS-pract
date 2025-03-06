@@ -1,6 +1,6 @@
 import React from 'react'
 import FirebaseLearning from './FirebaseLearning'
-import Login from './Login'
+import Login from './SignUp'
 import { Route, Routes } from 'react-router-dom'
 
 const Main = () => {

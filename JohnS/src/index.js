@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Main from './Router/Main'
+import Main from './Firebase Learning/Main'
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 

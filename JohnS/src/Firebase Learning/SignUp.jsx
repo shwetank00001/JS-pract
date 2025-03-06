@@ -4,12 +4,16 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const [userData, setUserdata] = useState([]);
+  const [isActive, setIsActive] = useState(false)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [textDisplay, setText] = useState();
 
   let handleSub = async function (e) {
+    // window.localStorage.setItem("email", email )
+    // window.localStorage.setItem("pass", password )
+
     e.preventDefault();
     const newData = {
       id: new Date().getTime(),
@@ -26,6 +30,7 @@ const Login = () => {
         email,
         password
       );
+      setIsActive(true)
       console.log("User Signed up with", userCreds);
       setText("User created in firebase DB.");
     } catch (error) {
