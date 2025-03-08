@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Home from "./LoginWithRouterAndContext/Home";
+import Theme from "./projects/ContextHook/Theme";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Home />
+    <Theme />
   </BrowserRouter>
 
   // <React.StrictMode>
