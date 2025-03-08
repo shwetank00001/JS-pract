@@ -17,6 +17,8 @@ const Auth = () => {
     }
     React.useEffect(() => {
         console.log(auth?.currentUser?.email)
+        console.log(auth?.currentUser?.photoURL)
+        console.log(auth?.currentUser)
     })
 
     async function signWithGoogle(){
