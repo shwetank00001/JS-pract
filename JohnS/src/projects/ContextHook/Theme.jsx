@@ -18,6 +18,7 @@ const Theme = () => {
             <button onClick={() => setColor('blue')}>🔵</button>
             <button onClick={() => setColor('purple')}>🟣</button>
             <ThemeHome />
+            <footer>Note:- This is just for logic purpose. This theme feature can be added anywhere and styled however someone wants.</footer>
         </themeContext.Provider>
     </div>
   )
