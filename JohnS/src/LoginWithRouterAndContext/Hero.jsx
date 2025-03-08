@@ -8,6 +8,8 @@ const Hero = () => {
         <Link to={'/login'}>Click here to Login</Link>
         <br />
         <Link to={'/signup'}>Click here to Sign Up</Link>
+        <br/>
+        <Link to={'/details'}>View Our Products</Link>
     </div>
   )
 }

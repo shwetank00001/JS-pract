@@ -12,10 +12,15 @@ const Login = () => {
 
     const handleSubmit = (e) => {
       e.preventDefault();
+
       if(loginName === window.localStorage.getItem("userName") && loginPass === window.localStorage.getItem("userPassword")){
         setAuth(true)
       }
       else setAuth(false)
+      if(!window.localStorage.getItem("userName")){
+        alert("Please Sign Up first!")
+        nav('/signup')
+      }
     }
     useEffect(() => {
       if(isAuth){
