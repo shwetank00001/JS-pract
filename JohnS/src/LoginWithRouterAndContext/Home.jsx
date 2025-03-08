@@ -12,9 +12,12 @@ import ProtectedRoute from "./ProtectedRoute";
 const Home = () => {
 
     const [isAuth, setAuth] = React.useState(false);
+    const [name, setName] = React.useState()
+    const [password, setPassword] = React.useState()
+    // const all = {}
   return (
     
-    <GlobalContext.Provider value={{isAuth, setAuth}}>
+    <GlobalContext.Provider value={{isAuth, setAuth, name, setName, password, setPassword}}>
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/signup" element={<Signup />} />

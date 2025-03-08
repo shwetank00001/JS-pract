@@ -4,8 +4,11 @@ import { GlobalContext } from "./GlobalContext";
 
 const Details = () => {
   const {isAuth, setAuth} = React.useContext(GlobalContext);
+
   function logout(){
-    setAuth(false)
+    setAuth(false);
+    window.localStorage.removeItem("userName")
+    window.localStorage.removeItem("userPassword")
   }
   return (
     <div>
