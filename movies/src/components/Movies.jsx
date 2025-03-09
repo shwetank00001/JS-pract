@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { store } from './Firebase';
-import { getDocs, collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
+import { getDocs, collection, addDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { auth } from './Firebase';
 import { Link } from 'react-router';
 
 function Movies() {
@@ -9,6 +10,8 @@ function Movies() {
   const [director, setDirector] = useState('');
   const [releaseDate, setReleaseDate] = useState('');
   const [hasOscar, setOscar] = useState(false);
+
+  const [updateMovieTitle, setUpdatedTitle] = useState([])
 
   const movieCollectionRef = collection(store, 'movies');
 
@@ -40,6 +43,7 @@ function Movies() {
         directedBy: director,
         releaseDate: releaseDate,
         hasOscar : hasOscar,
+        userId: auth?.currentUser?.uid   // this mark is only for when the user is logged in
       });
       setTitle('');
       setDirector('');
@@ -55,6 +59,10 @@ function Movies() {
   async function remove(idParam) {
     const itemToDel = doc(store, 'movies', idParam);
     await deleteDoc(itemToDel);
+  }
+  async function update(idParam) {
+    const itemToDel = doc(store, 'movies', idParam);
+    await updateDoc(itemToDel, {title: updateMovieTitle});
   }
 
   return (
@@ -85,6 +93,8 @@ function Movies() {
                 <p className="text-gray-500">Release Date: {item.releaseDate}</p>
               </div>
               <button className="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 transition" onClick={() => remove(item.id)}>Delete</button>
+              <input placeholder='update the title' onChange={(e) => setUpdatedTitle(e.target.value)}/>
+              <button onClick={() => {update(item.id)}}>Update</button>
             </div>
           ))
         ) : (
