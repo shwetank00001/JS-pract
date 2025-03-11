@@ -1,4 +1,4 @@
-4301
+4303
 70C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\node_modules\nullthrows133847792708995217 1
 70C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\node_modules\domhandler133847792713426679 1
 71C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\node_modules\detect-libc133847792683281080 1
@@ -36,7 +36,7 @@
 68C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\node_modules\escalade133847792691044274 1
 96C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\node_modules\@parcel\source-map\dist\node.js.flow133847792681981427 0
 110C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\node_modules\@swc\helpers\_\_class_apply_descriptor_destructure133847792758318597 1
-51C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\dist133861253035456289 1
+51C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\dist133861253199116118 1
 105C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\node_modules\caniuse-lite\data\features\async-functions.js133847792748682359 0
 73C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\node_modules\dotenv-expand133847792718827208 1
 67C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\node_modules\is-json133847792655367879 1
@@ -4298,5 +4298,7 @@
 75C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\node_modules\.bin\semver.ps1133847795280293170 0
 69C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\dist\index.6bd02f5a.js133861220309478445 0
 73C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\dist\index.7826abd7.js.map133861253035436343 0
-62C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\dist\index.html133861253035321521 0
+69C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\dist\index.8d3b60cd.js133861253198897640 0
+73C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\dist\index.8d3b60cd.js.map133861253199110849 0
+62C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\dist\index.html133861253198897640 0
 76C:\Users\Shwetank\Desktop\Code\JS\NamasteReact\dist\NamasteReact.3464ddca.js133861219221029663 0
