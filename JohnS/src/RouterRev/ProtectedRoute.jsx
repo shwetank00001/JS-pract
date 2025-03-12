@@ -7,4 +7,4 @@ function ProtectedRoute({ children }) {
   return isAuth ? children : <Navigate to={"/login"} />;
 }
 
-export default MainRouter;
+export default ProtectedRoute;

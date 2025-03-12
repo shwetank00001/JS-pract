@@ -4,6 +4,7 @@ import PersonalData from "./PersonalData";
 import { Routes, Route } from "react-router-dom";
 import { globalContext } from "./globalContext";
 import Login from "./Login";
+import ProtectedRoute from "./ProtectedRoute";
 
 function MainRouter() {
   const [isAuth, setAuth] = React.useState(false);
@@ -11,7 +12,14 @@ function MainRouter() {
     <globalContext.Provider value={{ isAuth, setAuth }}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/personalData" element={<PersonalData />} />
+        <Route
+          path="/personalData"
+          element={
+            <ProtectedRoute>
+              <PersonalData />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/login" element={<Login />} />
       </Routes>
     </globalContext.Provider>

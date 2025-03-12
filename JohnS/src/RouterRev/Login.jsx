@@ -1,14 +1,17 @@
 import React from "react";
 import { globalContext } from "./globalContext";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const { isAuth, setAuth } = React.useContext(globalContext);
 
+  const nav = useNavigate();
   const loginuser = () => {
-    setAuth(function (item) {
-      return true;
-    });
+    setAuth(true);
+    console.log(isAuth);
+    nav("/personalData");
   };
+
   return (
     <div>
       <h3>Login here</h3>
