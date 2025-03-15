@@ -1,0 +1,8 @@
+.main-task {
+    box-sizing: border-box;
+    border: 2px solid black;
+    margin: 1%;
+    display: grid;
+    place-content: center;
+    width: 90%;
+}
