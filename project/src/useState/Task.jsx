@@ -6,6 +6,8 @@ const Task = () => {
   const [task, setTask] = useState();
   const [taskList, setList] = useState([])
 
+  const [isChecked, setChecked] = useState(false)
+
   function handleSubmit(e){
     e.preventDefault();
     setList(function(item){
@@ -13,26 +15,31 @@ const Task = () => {
       return [...item, newTask]
     })
     setTask('')
-    console.log(task)
   }
 
-  console.log(task)
 
   function remove(idParam){
     setList(function(item){
       return taskList.filter((item) => item.id !== idParam)
     })
   }
-  function update(itemParam){
-    setTask(itemParam.task)
+
+  function updateCheckBox(idParam){
+    if(idParam){
+      setChecked(true)
+    }
+    console.log(idParam)
   }
 
+  const styles = {
+    textDecoration :isChecked? "line-through" : "none"
+  }
   const renderList = taskList.map(function(item){
     return (
       <div key={item.id}>
-        <p>{item.task}</p>
+        <p style={ styles}>{item.task}</p>
+        <input type='checkbox' checked={isChecked} onChange={() => updateCheckBox(item.id)} />
         <button onClick={() => {remove(item.id)}}>Del</button>
-        <button onClick={() => {update(item)}}>Upd</button>
       </div>
     )
   })
