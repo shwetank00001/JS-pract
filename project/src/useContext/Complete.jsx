@@ -1,10 +1,10 @@
 import React from "react";
-import Complete from "./useContext/Complete";
+import Homepage from "./Homepage";
 
 const App = () => {
   return (
     <div>
-      <Complete />
+      <Homepage />
     </div>
   );
 };
