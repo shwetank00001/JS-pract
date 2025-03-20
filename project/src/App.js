@@ -1,10 +1,10 @@
 import React from "react";
-import Complete from "./useContext/Complete";
+import Stopwatch from "./useRef/Stopwatch";
 
 const App = () => {
   return (
     <div>
-      <Complete />
+      <Stopwatch />
     </div>
   );
 };
