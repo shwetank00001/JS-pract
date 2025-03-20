@@ -2,11 +2,11 @@ import React from 'react'
 import './weather.css'
 
 const WeatherApi = () => {
-    let param = ''
-    const url = `http://api.weatherstack.com/current?access_key=95270665990b508575436b32461c4c71&query=Paris`
+    const [param, setParam] = React.useState("Paris")
+    const url = `http://api.weatherstack.com/current?access_key=95270665990b508575436b32461c4c71&query=${param}`
 
     const [allData, setData] = React.useState([])
-    const [city, setCity] = React.useState([])
+    const [city, setCity] = React.useState("")
 
 
     const ele =  allData.map(function(item){
@@ -45,8 +45,7 @@ const WeatherApi = () => {
 
     function searchit(e){
         e.preventDefault();
-        param = city;
-        console.log(param)
+        setParam(city)
     }
   return (
     <div className='weatherMain'>
