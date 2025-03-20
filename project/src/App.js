@@ -1,9 +1,10 @@
 import React from 'react'
-import Task from './useState/Task'
+import WeatherApi from './useEffect/WeatherApi'
+
 const App = () => {
   return (
     <div>
-      <Task />
+      <WeatherApi />
     </div>
   )
 }
