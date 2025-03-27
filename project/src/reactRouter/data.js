@@ -1,1 +1,1 @@
-export const peopleData = ["Shwetank", "Swapnil", "Kunal"]
+export const peopleData = ["Shwetank", "Swapnil", "Kunal", "Patel"];
