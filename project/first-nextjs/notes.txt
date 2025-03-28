@@ -1,0 +1,36 @@
+NEXT JS NOTES
+
+What is nextjs? 
+Next js is a react framework used to build fullstack web applications.
+
+
+why use Nextjs? 
+react is a UI library and fullstack isnt possible in it.
+
+features we can have in nextjs
+-routing
+-data feching
+-optimising
+-bundling
+-compiling
+
+Why learn Nextjs -> CAn make production ready applications
+Features out of the box ->
+1. Routing
+2.  Api Routes
+3. Rendering -> this supports both server side and client side Rendering i.e better SSO and performance.
+4. Styling -> css and tailwinds
+
+
+NOW THE FILE DISTRIBUTION IN Nextjs (IMP)
+
+next.config -> next js settings
+ts.config -> Ts settings
+esling file
+ESLint is a static code analysis tool for JavaScript and JSX that helps identify and fix problems in your code, improving code quality and consistency by enforcing coding standards and catching potential bugs early in development
+
+src > app -> this app folder is the app router
+favicorn - browser tab icon
+layout.tsx -> shared UI elements across all pages
+paget.tsx -> creates what u see at LH:3000;
+
