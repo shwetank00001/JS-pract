@@ -45,3 +45,25 @@ Three important conventions for routing
 So by using these 3 steps -> The file automatically becomes available as a route.
 
 Scenario 1- Let's make a scenario where the user visits the homepage => '/' URLs 
+c:\Users\Shwetank\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TempState\ScreenClip\{23F40DA6-76D8-4631-9011-D7D4EB50EB7E}.png
+app
+├── about
+│   └── page.tsx
+├── profile
+│   └── page.tsx
+├── layout.tsx
+└── page.tsx
+
+Lets make a blog URL with blog/blog1 and blog/blog2
+app
+├── about
+│   └── page.tsx
+├── profile
+│   └── page.tsx
+├── blog
+│   ├── blog1
+│   │   └── page.tsx
+│   ├── blog2
+│   │   └── page.tsx
+├── layout.tsx
+└── page.tsx
