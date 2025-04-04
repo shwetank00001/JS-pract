@@ -1,18 +1,18 @@
 export const persons = [
   {
     id: 1,
-    names: "Shwetank",
+    fname: "Shwetank",
   },
   {
     id: 2,
-    name: "Kushal",
+    fname: "Mishra",
   },
   {
     id: 3,
-    names: "Jathin Kutta",
+    fname: "SDE 1",
   },
   {
     id: 4,
-    names: "Test",
+    fname: "soon",
   },
 ];
