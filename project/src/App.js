@@ -1,9 +1,9 @@
 import React from "react";
-import Main from "./useContextRevise/Main";
+import Reducer from "./useReducer/Reducer";
 const App = () => {
   return (
     <div>
-      <Main />
+      <Reducer />
     </div>
   );
 };
