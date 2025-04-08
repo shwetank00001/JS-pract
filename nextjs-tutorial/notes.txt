@@ -67,3 +67,10 @@ app
 │   │   └── page.tsx
 ├── layout.tsx
 └── page.tsx
+
+
+Dynamic Routing 
+Lets implement useParams in nextjs
+eg - Product page has 4 items and tapping on each items lead to a specific url.
+
+Folders in [name] are treated as dynamic segments -> dynamic route
