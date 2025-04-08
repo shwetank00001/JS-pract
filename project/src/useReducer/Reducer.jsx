@@ -2,7 +2,32 @@ import React from "react";
 
 export default function Reducer() {
   const [data, setData] = React.useState("");
-  const [dataList, setList] = React.useState([]);
+  // const [dataList, setList] = React.useState([]);
+
+  const defaultState = {
+    dataList: [],
+    isModal: true,
+  };
+
+  const reducer = (state, action) => {
+    if (action.type === "add") {
+      const newValue = [...state.dataList, action.payload];
+      return {
+        dataList: newValue,
+        isModal: true,
+      };
+    }
+    if (action.type === "remo") {
+      const newValue = state.dataList.filter(
+        (item) => item.id !== action.payload
+      );
+      return {
+        dataList: newValue,
+        isModal: true,
+      };
+    }
+  };
+  const [state, dispatch] = React.useReducer(reducer, defaultState);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -11,19 +36,21 @@ export default function Reducer() {
       id: new Date().getTime(),
       data: data,
     };
-    setList(function (item) {
-      return [...item, newData];
-    });
+    dispatch({ type: "add", payload: newData });
+    // setList(function (item) {
+    //   return [...item, newData];
+    // });
   }
 
   const removeData = (idParam) => {
-    const newData = dataList.filter(function (item) {
-      return item.id !== idParam;
-    });
-    setList(newData);
+    // const newData = state.dataList.filter(function (item) {
+    //   return item.id !== idParam;
+    // });
+    dispatch({ type: "remo", payload: idParam });
+    // setList(newData);
   };
 
-  const dispList = dataList.map(function (item) {
+  const dispList = state.dataList.map(function (item) {
     return (
       <div key={item.id}>
         <h3>{item.data}</h3>
