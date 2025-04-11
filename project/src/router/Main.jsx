@@ -8,7 +8,7 @@ export default function Main() {
       <h3>Clicking this will take you to the users list page.</h3>
       <Link to="/people">People List (Only accessible if logged In!)</Link>
       <hr />
-      <Link to="/auth">Log in?</Link>
+      <Link to="/auth">Log in?!</Link>
     </div>
   );
 }
