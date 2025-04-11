@@ -1,9 +1,9 @@
 import React from "react";
-import Reducer from "./useReducer/Reducer";
+import Home from "./router/Home";
 const App = () => {
   return (
     <div>
-      <Reducer />
+      <Home />
     </div>
   );
 };
