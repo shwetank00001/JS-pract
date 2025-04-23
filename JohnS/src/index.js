@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Test from "./Test";
+import Debounce from "./DebounceAndThrottling/Debounce";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Test />
+    <Debounce />
   </BrowserRouter>
 
   // <React.StrictMode>
