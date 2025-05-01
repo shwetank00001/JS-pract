@@ -1,0 +1,29 @@
+header {
+  background-color: lightblue;
+}
+
+.middle {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  padding: 5%;
+}
+.top {
+  display: grid;
+}
+.main-content {
+  background-color: green;
+}
+
+.sidebar {
+  background-color: purple;
+}
+
+.twin {
+  background-color: orange;
+  grid-column: span 2;
+}
+
+footer {
+  background-color: darkblue;
+}

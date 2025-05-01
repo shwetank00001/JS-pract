@@ -1,9 +1,9 @@
 import React from "react";
-import Home from "./router/Home";
+import Layout from "./vanillaCss/Layout";
 const App = () => {
   return (
     <div>
-      <Home />
+      <Layout />
     </div>
   );
 };

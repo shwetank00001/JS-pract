@@ -30,7 +30,8 @@ const Login = () => {
         <input placeholder='email' type='email' required value={email} onChange={(e) => setEmail(e.target.value)}/>
         <input placeholder='pass' type='text' required value={password} onChange={(e) => setPassword(e.target.value)}/>
         <input placeholder='confirm password..' required type='password' value={confPassword} onChange={(e) => setConfPassword(e.target.value)}/>
-        <button type='submit'>Submit</button>     
+        <button type='submit'>Submit</button>
+             
       </form>
     </div>
   )
