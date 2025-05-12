@@ -1,0 +1,6 @@
+TanStack Query – Data Fetching & Caching
+Handles API requests efficiently 
+with automatic caching, background 
+updates, and pagination. Ensures your
+app always fetches fresh data while
+minimizing network requests.
