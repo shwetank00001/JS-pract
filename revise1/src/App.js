@@ -1,9 +1,9 @@
-import State from "./hooks/state/State";
+import ReactQuery from "./tanstack/ReactQuery";
 
 function App() {
   return (
     <div className="App">
-      <State />
+      <ReactQuery />
     </div>
   );
 }
