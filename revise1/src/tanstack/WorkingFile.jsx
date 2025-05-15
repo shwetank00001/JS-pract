@@ -2,12 +2,17 @@ import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 
 const WorkingFile = () => {
-    const {data, isPending, refetch, isFetching} =  useQuery({
+
+    const {data, isPending, refetch, isFetching, error} =  useQuery({
         queryKey : ['users'],
         queryFn : getData
     });
 
     console.log(data)
+
+    if(error){
+        alert("Something went wrong!")
+    }
   return (
     <div>
         {isPending ? "DATA IS LOADING...." : data.map(function(item){
@@ -20,12 +25,13 @@ const WorkingFile = () => {
     })
 }
         <button onClick={() => {refetch( )}}>Refresh</button>
+
     </div>
   )
 }
 
 async function getData(){
-    const respone = await fetch('https://fakestoreapi.com/carts');
+    const respone = await fetch('https://fakestoreapi.com/carts/1');
     return await respone.json();
 }
 
