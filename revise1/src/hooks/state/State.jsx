@@ -15,6 +15,8 @@ const State = () => {
       return [...item, keyedPerson];
     });
   }
+
+  console.log("State app re renderedz1");
   console.log(peopleQueue);
 
   const removePerson = (idParam) => {

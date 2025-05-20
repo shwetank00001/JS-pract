@@ -1,10 +1,9 @@
-// import ReactQuery from "./tanstack/ReactQuery";
-import State from "./hooks/state/State";
+import Refhook from "./hooks/ref/RefHook";
 
 function App() {
   return (
     <div className="App">
-      <State />
+      <Refhook />
     </div>
   );
 }
