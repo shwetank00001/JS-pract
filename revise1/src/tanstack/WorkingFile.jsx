@@ -4,10 +4,12 @@ import { useQuery } from '@tanstack/react-query'
 const WorkingFile = () => {
 
     const [id, setId] = useState(1)
+    const [on, setOn] = useState(true)
 
     const {data, isPending, refetch, isFetching, error} =  useQuery({
         queryKey : ['users', id],
-        queryFn : () => getData(id) 
+        queryFn : () => getData(id) ,
+        enabled: on
     });
 
     console.log(data)
