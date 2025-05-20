@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 
 const WorkingFile = () => {
 
+    const [id, setId] = useState(1)
+
     const {data, isPending, refetch, isFetching, error} =  useQuery({
-        queryKey : ['users'],
-        queryFn : getData
+        queryKey : ['users', id],
+        queryFn : () => getData(id) 
     });
 
     console.log(data)
@@ -19,19 +21,19 @@ const WorkingFile = () => {
         return (
             <>
                 <h1>{item.id}</h1>
-                <h2>{item.date}</h2>
+                <h2>{item.title}</h2>
             </>
         )
     })
 }
         <button onClick={() => {refetch( )}}>Refresh</button>
-        <button>Increment id</button>
+        <button onClick={() => setId(item => item + 1)}>Increment id</button>
     </div>
   )
 }
 
-async function getData(){
-    const respone = await fetch('https://fakestoreapi.com/carts/1');
+async function getData(id){
+    const respone = await fetch(`https://fakestoreapi.com/products?limit=${id}`);
     return await respone.json();
 }
 

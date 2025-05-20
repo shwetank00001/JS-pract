@@ -1,16 +1,10 @@
-function a(){
-    let aVar = 10
-    function b(){
-
-        let bVar = 20;
-        console.log("b")
-
-        function c(){
-            console.log(aVar, bVar )
-        }
-        return c;
-    }
-    return b;
+function x(){
+    var y = 10;
+    console.log(y)
 }
 
-a()()
+var z = 20;
+console.log(z);
+x();
+console.log(abc)
+var abc = 20;
