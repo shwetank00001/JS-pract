@@ -14,6 +14,10 @@ function addNewPizza(menuParam) {
 
 addNewPizza(menu);
 
-function placeOrder(menuObj) {
-  menuObj;
+function placeOrder(pizzaName) {
+  for(pizzaName in menu){
+    cashInRegister += menu[pizzaName].price;
+    orderQueue.push([{pizza: selectedPizzaObjectFromStep1, status: "ordered" }]);
+    return orderQueue
+  }
 }
