@@ -1,11 +1,12 @@
 function x(){
-    let a = 100;
     function y(){
         console.log(a)
     }
+    let a = 100;
     return y
 }
 
-let z = x();
+
+const z = x();
 console.log(z);
-z()
+z();

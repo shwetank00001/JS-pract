@@ -7,6 +7,7 @@ const Task = (props) => {
   const tasks = useStore(globalState => globalState.tasks.filter(item => item.status === props.taskStatus));
   // const ele = tasks.map(item => console.log(item.status));
 
+  
   console.log(tasks)
 
   return (
