@@ -13,7 +13,7 @@ addCount();
 function allCount(){
     let sum = 0;
     function testin(){
-        sum++;
+        sum = sum + 1;
         console.log("Sum is", sum);
     }
     return testin
