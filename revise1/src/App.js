@@ -1,9 +1,9 @@
-import Home from "./hooks/theme/Home";
+import BookList from "./booksList/BookList";
 
 function App() {
   return (
     <>
-      <Home />
+      <BookList />
     </>
   );
 }

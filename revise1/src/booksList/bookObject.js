@@ -8,16 +8,14 @@ export const bookArray = [
       id:2 ,
       image:
         "https://images-eu.ssl-images-amazon.com/images/I/81+ceFx9BcL._AC_UL600_SR600,400_.jpg",
-      title: "Book 3",
-      author: "Author 3",
+      title: "SDE 1",
+      author: "Me",
     },
     {
       id:3 ,
       image:
         "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQmZByRZWuFEPc73-VtuMfkAuJJp0dyZtIdxcgtyuel_uX5IgWmzLrgVFinLO_2G-tfdqm3KsIA8FtpSrjxsFqZPe7iE_JnlJI9vsdcFmyvcWRfK6jOcJYfnw&usqp=CAc",
-      title: "Book 3",
-      author: "Author 3",
+      title: "Soon",
+      author: "FAANG",
     },
   ];
-
-  export const data2 = ["Hi"]
