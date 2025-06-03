@@ -7,6 +7,15 @@
 </head>
 <body>
     ..
-    <script src="apply.js" ></script>
+    <div>
+       <p id="example">Hello</p>
+    </div>
+
+    <script >
+        const oldTag = document.getElementById("example")
+        const newInput = document.createElement("input");
+        newInput.value = "Hi";
+        oldTag.replaceWith(newInput)
+    </script>
 </body>
 </html>
