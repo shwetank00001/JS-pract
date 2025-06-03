@@ -15,7 +15,10 @@
         const oldTag = document.getElementById("example")
         const newInput = document.createElement("input");
         newInput.value = "Hi";
-        oldTag.replaceWith(newInput)
+
+        const newInput1111 = document.createElement("button");
+        newInput1111.textContent = "This is a new Ptag";
+        oldTag.replaceWith(newInput, newInput1111)
     </script>
 </body>
 </html>
