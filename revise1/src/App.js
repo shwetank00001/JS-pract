@@ -1,9 +1,9 @@
-import BookList from "./booksList/BookList";
+import CleanupFunction from "./hooks/effect/CleanupFunction";
 
 function App() {
   return (
     <>
-      <BookList />
+      <CleanupFunction />
     </>
   );
 }
