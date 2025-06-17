@@ -13,3 +13,5 @@ const useCounterStore = create(function(set){
         
     })
 })
+
+// https://aistudio.google.com/u/1/prompts/1PXfZZr_BDquYH3bZvirbn6GBZMmTLxdi
