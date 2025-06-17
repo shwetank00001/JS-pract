@@ -10,4 +10,4 @@ const gymEx = [
 const list = gymEx.map(function(item){
     return item.chest
 })
-console.log(list)
+console.log(list);
