@@ -1,9 +1,9 @@
-import CleanupFunction from "./hooks/effect/CleanupFunction";
+import Home from "./suspense/Home";
 
 function App() {
   return (
     <>
-      <CleanupFunction />
+      <Home />
     </>
   );
 }
