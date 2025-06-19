@@ -1,10 +1,12 @@
 import {Link, useNavigate} from 'react-router';
+import { globalContext } from './globalContext';
+import { useContext } from 'react';
 
 
 function Welcome() {
 
   const nav = useNavigate();
-
+  const {auth} = useContext(globalContext)
   function loginToggle(e){
     e.preventDefault();
     nav('/login');
@@ -13,6 +15,7 @@ function Welcome() {
     e.preventDefault();
     nav('/signup');
   }
+  console.log(auth)
     return (
       <>
       <h3>Welcome to my page</h3>

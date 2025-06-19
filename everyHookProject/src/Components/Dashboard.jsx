@@ -24,18 +24,18 @@ function Dashboard() {
 
 
 
-  const displayList = mainData.results.map(function(item){
-    return (
-      <div key={item.id}>
-        <h3>{item.name}</h3>
-      </div>
-    )
-  })
+  // const displayList = mainData.results.map(function(item){
+  //   return (
+  //     <div key={item.id}>
+  //       <h3>{item.name}</h3>
+  //     </div>
+  //   )
+  // })
     return (
       <>
         <h3>Dashboard</h3>
         <p>This page will have details for Pokemons</p>
-        {displayList}
+        {/* {displayList} */}
       </>
     )
   }
