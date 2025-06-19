@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react';
+import React, {Suspense, useState} from 'react';
 import {Route, Routes} from 'react-router'
 import Signup from './SIgnup'
 import Login from './Login'
@@ -8,16 +8,22 @@ import Welcome from './Welcome';
 
 const LazyTodo = React.lazy(() => import('./Todos'))
 const LazyDashboard = React.lazy(() => import('./Dashboard'))
+
+import {globalContext} from './globalContext'
+
 function Main() {
+    const [auth, setAuth] = useState(false)
 
     return (
-        <Routes>
-            <Route path='/' element={<Welcome />} />
-            <Route path='/dashboard' element={<Suspense fallback={<h4>Loading Pokedex....</h4>}><LazyDashboard /></Suspense>} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/todos' element={<Suspense fallback={<h3>Loading Data....</h3>}><LazyTodo/></Suspense>} />
-        </Routes>
+        <globalContext.Provider value={{auth, setAuth}}>
+            <Routes>
+                <Route path='/' element={<Welcome />} />
+                <Route path='/dashboard' element={<Suspense fallback={<h4>Loading Pokedex....</h4>}><LazyDashboard /></Suspense>} />
+                <Route path='/signup' element={<Signup />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/todos' element={<Suspense fallback={<h3>Loading Data....</h3>}><LazyTodo/></Suspense>} />
+            </Routes>
+        </globalContext.Provider>
     )
   }
   
