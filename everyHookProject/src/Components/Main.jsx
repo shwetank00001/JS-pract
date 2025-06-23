@@ -9,7 +9,7 @@ import Welcome from './Welcome';
 import ProtectedRoute from './ProtectedRoute'
 
 import {ErrorBoundary, useErrorBoundary} from 'react-error-boundary'
-
+import Notes from './Notes';
 const LazyTodo = React.lazy(() => import('./Todos'))
 const LazyDashboard = React.lazy(() => import('./Dashboard'))
 
@@ -34,7 +34,7 @@ function Main() {
     return (
         <globalContext.Provider value={{auth, setAuth}}>
             <Routes>
-                <Route path='/' element={<Welcome />} />
+                <Route path='/' element={<Notes />} />
                 <Route path='/dashboard' element={<ErrorBoundary fallbackRender={showFallBackError} onError={showErrorLogs}><ProtectedRoute><Suspense fallback={<h4>Loading Pokedex....</h4>}><LazyDashboard /></Suspense></ProtectedRoute></ErrorBoundary>} />
                 {/* <Route path='/dashboard' element={<ErrorBoundary fallback={<Error />}><ProtectedRoute><Suspense fallback={<h4>Loading Pokedex....</h4>}><LazyDashboard /></Suspense></ProtectedRoute></ErrorBoundary>} /> */}
                 <Route path='/signup' element={<Signup />} />

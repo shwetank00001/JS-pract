@@ -11,7 +11,7 @@ function Dashboard() {
   console.log(mainData.results);
 
 
-    let displayList = mainData?.results.map(function(item){
+    let displayList = mainData?.results?.map(function(item){
     return (
       <div key={item.id}>
         <h3>{item.name}</h3>
