@@ -1,8 +1,9 @@
-import JokesMain from "./Jokes/JokesMain";
+import Home from "./router/Home";
+
 function App() {
   return (
     <>
-      <JokesMain />
+      <Home />
     </>
   );
 }
