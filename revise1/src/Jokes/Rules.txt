@@ -1,0 +1,20 @@
+If i want to change inside the child component, we add the functionality in the child compo.
+If we want to change on the component, then we add the functionality in parent compo?
+
+Rule 1: Changing "INSIDE" the Child Component
+You are 100% correct.
+If I want to change something inside a single component, and that change does not affect any other component, the state and functionality belong in that child component.
+What this means:
+Show/Hide: Toggling the visibility of an element within one card.
+Toggle a Style: Changing the color of one card when you click a button on it.
+Local Counter: A "Like" button that only counts likes for that one specific item.
+This is often called Local State. It lives and dies with that one component instance.
+
+Rule 2: Changing "THE COMPONENT ITSELF" from the List
+You are also correct here. The key is to think about who owns the list. The parent owns the list, so the parent must be in charge of changing it.
+If I want to change the list of components itself (by deleting one, updating its data, or re-ordering them), the state and functionality must be in the parent component.
+What this means:
+Deleting: Removing the component from the screen entirely. This means removing its data from the parent's array.
+Updating: Changing the title or age of a joke. This means updating the data in the parent's array, which then causes the child to re-render with new props.
+Re-ordering: Changing the position of the component in the list.
+This pattern is called Lifting State Up. The state is "lifted" to the closest common ancestor of all the components that need to know about it.

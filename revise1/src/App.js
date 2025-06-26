@@ -1,9 +1,8 @@
-import Home from "./suspense/Home";
-
+import JokesMain from "./Jokes/JokesMain";
 function App() {
   return (
     <>
-      <Home />
+      <JokesMain />
     </>
   );
 }
