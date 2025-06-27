@@ -1,9 +1,9 @@
-import Home from "./router/Home";
+import Search from './search/Search'
 
 function App() {
   return (
     <>
-      <Home />
+      <Search />
     </>
   );
 }
