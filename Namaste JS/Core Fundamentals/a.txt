@@ -65,3 +65,37 @@ Both of these would return true.
 
 
 will read this today -> pushing for streak.
+
+====array===
+const a = [1,2,3,5,6,10,33,11,99];
+
+// console.log(a.sort((x,y) => x-y))
+// console.log(a.pop())
+// console.log(a.pop())
+
+
+a.splice(2,4);
+console.log(a)
+===============
+
+=====object=====
+
+let myObject = {
+    name: "Alice",
+    age: 30
+};
+console.log(myObject.hasOwnProperty('name'));  // true
+
+
+for (let keys in myObject){   // iterates over keys one by one!!
+    console.log(keys)
+} 
+//
+name
+age
+
+
+const key = Object.keys(myObject);   // returns an array
+console.log(key)  // [ 'name', 'age' ]
+============================================================
+
