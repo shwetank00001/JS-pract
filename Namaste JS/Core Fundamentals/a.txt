@@ -94,6 +94,24 @@ for (let keys in myObject){   // iterates over keys one by one!!
 name
 age
 
+for(let keys in myObject){
+    console.log(myObject[keys])  // values
+}
+=====================
+let myObject = {
+    name: "Alice",
+    age: 30,
+    address: {
+        personal: "Noida",
+        official: "Gurgaon"
+    }
+};
+for(let keys in myObject){
+    console.log(keys)
+}
+Consoling the keys here will only give the keys in the top level!
+
+=======================
 
 const key = Object.keys(myObject);   // returns an array
 console.log(key)  // [ 'name', 'age' ]
