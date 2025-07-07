@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>Onboarding Wizard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen transition-colors">
+
+  <main class="max-w-xl mx-auto p-6" aria-live="polite">
+    <header class="flex justify-between items-center mb-4">
+      <h1 class="text-2xl font-bold">Onboarding</h1>
+      <button onclick="toggleTheme()" class="text-sm border px-3 py-1 rounded">Toggle Theme</button>
+    </header>
+
+    <nav id="progress" class="flex justify-center gap-2 mb-6" aria-label="Progress"></nav>
+
+    <form id="form" class="space-y-6" novalidate>
+      <fieldset class="step hidden" data-step="0">
+        <legend class="text-lg font-semibold mb-2">Account</legend>
+        <div>
+          <label class="block mb-1">Email</label>
+          <input type="email" name="email" required class="w-full px-3 py-2 rounded dark:bg-gray-800" />
+        </div>
+        <div>
+          <label class="block mb-1">Password</label>
+          <input type="password" name="password" required class="w-full px-3 py-2 rounded dark:bg-gray-800" oninput="checkStrength(this.value)" />
+          <div class="h-2 bg-gray-300 mt-1 rounded">
+            <div id="strengthBar" class="h-full w-1/4 bg-green-500 rounded"></div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="step hidden" data-step="1">
+        <legend class="text-lg font-semibold mb-2">Profile</legend>
+        <div>
+          <label class="block mb-1">Full Name</label>
+          <input type="text" name="fullname" required class="w-full px-3 py-2 rounded dark:bg-gray-800" />
+        </div>
+        <div>
+          <label class="block mb-1">Avatar Upload</label>
+          <input type="file" accept="image/*" onchange="previewAvatar(event)" />
+          <img id="avatarPreview" class="mt-2 w-20 h-20 rounded-full object-cover hidden" />
+        </div>
+        <div>
+          <label class="block mb-1">Timezone</label>
+          <select name="timezone" class="w-full px-3 py-2 rounded dark:bg-gray-800">
+            <option value="IST">IST</option>
+            <option value="UTC">UTC</option>
+            <option value="EST">EST</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset class="step hidden" data-step="2">
+        <legend class="text-lg font-semibold mb-2">Preferences</legend>
+        <label class="flex items-center gap-2"><input type="checkbox" name="updates" /> Email Updates</label>
+        <label class="flex items-center gap-2"><input type="checkbox" name="darkmode" /> Dark Mode</label>
+        <label class="flex items-center gap-2"><input type="checkbox" name="notifications" /> Push Notifications</label>
+        <div>
+          <label class="block mb-1">Font Size</label>
+          <input type="range" name="fontsize" min="12" max="24" />
+        </div>
+      </fieldset>
+
+      <fieldset class="step hidden" data-step="3">
+        <legend class="text-lg font-semibold mb-2">Review & Finish</legend>
+        <div id="review" class="text-sm text-gray-400 animate-pulse">Loading summary...</div>
+        <button type="submit" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded active:scale-95">
+          Create Account
+        </button>
+      </fieldset>
+
+      <div class="flex justify-between mt-6">
+        <button type="button" onclick="prevStep()" class="border px-4 py-2 rounded">Back</button>
+        <button type="button" onclick="nextStep()" class="border px-4 py-2 rounded">Next</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    let step = parseInt(localStorage.step || "0");
+    const steps = document.querySelectorAll(".step");
+    const form = document.getElementById("form");
+    const review = document.getElementById("review");
+    const progress = document.getElementById("progress");
+
+    function showStep() {
+      steps.forEach((el, i) => {
+        el.classList.toggle("hidden", i !== step);
+      });
+
+      progress.innerHTML = "";
+      steps.forEach((_, i) => {
+        const chip = document.createElement("span");
+        chip.textContent = i + 1;
+        chip.className = "px-3 py-1 rounded-full border";
+        if (i === step) chip.classList.add("bg-blue-500", "text-white");
+        progress.appendChild(chip);
+      });
+
+      if (step === 3) {
+        review.innerHTML = "Loading summary...";
+        setTimeout(() => {
+          const data = Object.fromEntries(new FormData(form));
+          review.classList.remove("animate-pulse");
+          review.innerHTML = `<pre class="whitespace-pre-wrap">${JSON.stringify(data, null, 2)}</pre>`;
+          // alert('Account stored in DB')
+        }, 1500);
+
+      }
+
+      localStorage.step = step;
+    }
+
+    function nextStep() {
+      const currentStepEl = steps[step];
+      const inputs = currentStepEl.querySelectorAll("input, select, textarea");
+
+      for (const input of inputs) {
+        if (!input.checkValidity()) {
+          input.reportValidity();
+          return;
+        }
+      }
+
+      if (step < steps.length - 1) step++;
+      showStep();
+    }
+
+
+    function prevStep() {
+      if (step > 0) step--;
+      showStep();
+    }
+
+    function checkStrength(password) {
+      const bar = document.getElementById("strengthBar");
+      let strength = "w-1/4";
+      if (password.length >= 12) strength = "w-full";
+      else if (password.length >= 8) strength = "w-3/4";
+      else if (password.length >= 5) strength = "w-1/2";
+      bar.className = `h-full bg-green-500 rounded ${strength}`;
+    }
+
+    function previewAvatar(event) {
+      const file = event.target.files[0];
+      const img = document.getElementById("avatarPreview");
+      if (file) {
+        img.src = URL.createObjectURL(file);
+        img.classList.remove("hidden");
+      }
+    }
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle("dark");
+    }
+
+    document.addEventListener("DOMContentLoaded", showStep);
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Account created successfully!");
+      localStorage.clear();
+    });
+  </script>
+</body>
+</html>

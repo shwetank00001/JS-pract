@@ -1,6 +1,6 @@
 import React from "react";
 import { globalContext } from "./globalContext";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 export default function Auth() {
   const { auth, setAuth } = React.useContext(globalContext);
@@ -11,18 +11,25 @@ export default function Auth() {
       return !item;
     });
     console.log(auth);
-    if (auth) {
-      nav("/people");
-    }
+    nav('/people')
   };
   // React.useEffect(() => {
   //   nav("/people");
   // }, [auth]);
 
+  function moveToDash(){
+    nav('/people');
+    if(!auth){
+      alert("Please click on login first")
+    }
+  }
+
   return (
     <>
       <h1>Login</h1>
       <button onClick={handleAuth}>Click to login!</button>
+      <button><Link to={'/'}>Go to homepage</Link></button>
+      <button onClick={moveToDash}><Link to={'/people'}>Go to People list</Link></button>
     </>
   );
 }
