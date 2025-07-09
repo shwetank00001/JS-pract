@@ -8,7 +8,7 @@ export default function Auth() {
 
   const handleAuth = () => {
     setAuth(function (item) {
-      return !item;
+      return true;
     });
     console.log(auth);
     nav('/people')
@@ -29,7 +29,7 @@ export default function Auth() {
       <h1>Login</h1>
       <button onClick={handleAuth}>Click to login!</button>
       <button><Link to={'/'}>Go to homepage</Link></button>
-      <button onClick={moveToDash}><Link to={'/people'}>Go to People list</Link></button>
+      <button onClick={moveToDash}>Go to People list</button>
     </>
   );
 }
