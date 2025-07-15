@@ -1,12 +1,12 @@
-import Home from "./hooks/context/Home";
-import Login from "./hooks/context/Login";
-import Dash from "./hooks/context/Dash";
-import Signup from "./hooks/context/Signup";
+import Home from "./Home";
+import Login from "./Login";
+import Dash from "./Dash";
+import Signup from "./Signup";
 import { Routes, Route } from "react-router";
 import { useState } from "react";
 
-import { globalContext } from "./hooks/context/globalContext";
-import ProtectedRoute from "./hooks/context/ProtectedRoute";
+import { globalContext } from "./globalContext";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App1() {
   const [auth, setAuth] = useState(false);

@@ -1,9 +1,9 @@
-import Search from './search/Search'
+import App1 from "./hooks/context/App1";
 
 function App() {
   return (
     <>
-      <Search />
+      <App1 />
     </>
   );
 }

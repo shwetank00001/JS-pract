@@ -1,5 +1,5 @@
 import React from 'react'
-import { globalContext } from './globalContext'
+import { globalContext } from './globalContext';
 import { Navigate } from 'react-router';
 
 const ProtectedRoute = ({children}) => {
