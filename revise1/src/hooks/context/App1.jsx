@@ -10,6 +10,7 @@ import ProtectedRoute from "./ProtectedRoute";
 
 function App1() {
   const [auth, setAuth] = useState(false);
+  
   return (
     <globalContext.Provider value={{ auth, setAuth }}>
       <Routes>
