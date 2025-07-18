@@ -1,9 +1,8 @@
-import App1 from "./hooks/context/App1";
-
+import Main from "./auth/Main";
 function App() {
   return (
     <>
-      <App1 />
+      <Main />
     </>
   );
 }
