@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Main from "./Zustand/Main";
+import RouterTest from "./RouterTest/RouterTest";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 //react-redux setup
@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      <Main />
+      <RouterTest />
     </Provider>
   </BrowserRouter>
 
