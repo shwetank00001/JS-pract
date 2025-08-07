@@ -21,6 +21,7 @@ function Signup(){
                 window.localStorage.setItem("password", pass);
                 nav('/login')
             }
+            else alert("Passwords do not match")
         }
         
     }
@@ -30,9 +31,9 @@ function Signup(){
         <>
             <p>This is the login form.</p>
             <form onSubmit={handleSubmit}>
-                <input placeholder ="email.." value={email} onChange={(e) => {setEmail(e.target.value)}} />
-                <input placeholder ="password.." value={pass} onChange={(e) => {setPass(e.target.value)}} />
-                <input placeholder ="confirm pass.." ref={cnfPassRef} />
+                <input placeholder ="email.." value={email} onChange={(e) => {setEmail(e.target.value)}} required/>
+                <input placeholder ="password.." value={pass} onChange={(e) => {setPass(e.target.value)}} required />
+                <input placeholder ="confirm pass.." ref={cnfPassRef} required />
                 <button type="submit">Signup </button>
             </form>
         </>
