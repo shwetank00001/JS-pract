@@ -7,7 +7,10 @@ const initialState = {
 
 const proteinSlice = createSlice({
   name: 'protein',
-  initialState
+  initialState,
+  reducers : {
+    
+  }
 });
 
 export default proteinSlice.reducer

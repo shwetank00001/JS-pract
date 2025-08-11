@@ -6,6 +6,12 @@ export default function Homepage() {
     (globalState) => globalState.protein.proteinCount
   );
   console.log(proteinCount);
+
+  function handleSubmit(e){
+    e.preventDefault();
+
+  }
+  
   return (
     <div>
       <h1>Protein App</h1>

@@ -1,4 +1,5 @@
-import Main from "./auth/Main";
+import Main from "./search/Main";
+
 function App() {
   return (
     <>
