@@ -1,4 +1,4 @@
-import Main from "./search/Main";
+import Main from "./fetchCustom/Main";
 
 function App() {
   return (

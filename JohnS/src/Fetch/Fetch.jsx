@@ -8,6 +8,7 @@ function Fetch(){
     // const maxNumber = maxPrice.reduce((max, num) => (num > max ? num : max), maxPrice[0]);
     const url = "https://67bf5cc8b2320ee0501381f5.mockapi.io/ecom";
     // const url = "https://fakestoreapi.com/products";
+
     let getData =  async () => {
         try {
             const response = await fetch(url);
@@ -59,6 +60,7 @@ function Fetch(){
                 list: value
             }
         }
+        
         if(action.type === "remove"){
             const value = state.list.filter(function(item){
                 return item.id !== action.payload
