@@ -6,8 +6,7 @@ export default function List() {
 
   const [allData, setData] = useState([]);
 
-  const [inputData, setInputData] = useState('');
-
+  const [inputData, setInputData] = useState("");
 
   useEffect(() => {
     const getData = async () => {
@@ -32,19 +31,54 @@ export default function List() {
     );
   });
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault();
-    const newSearchedData = allData.filter(function(item){
-      return item.title.toLowerCase().includes(inputData)
-    })
+    const newSearchedData = allData.filter(function (item) {
+      return item.title.toLowerCase().includes(inputData);
+    });
     setData(newSearchedData);
   }
+
+  function handleReset(){
+    const getData = async () => {
+      try {
+        const data = await fetch(url);
+        const res = await data.json();
+        setData(res);
+      } catch (error) {
+        console.log("Error is:", error);
+      }
+    };
+    getData();
+  }
+
+  const testFn =() =>{
+    console.log("debounce")
+  }
+  function debouncedSearch(apiFunction, delay){
+    let timer;
+    return function(){
+      let context = this, args = arguments;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        apiFunction.apply(context, args);
+      }, delay)
+    }
+  }
+
+  const betterFunction = debouncedSearch(testFn, 1000)
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input placeholder="Add a data" value={inputData} onChange={(e) => setInputData(e.target.value)} />
+        <input
+          placeholder="Add a data...1"
+          value={inputData}
+          onChange={(e) => setInputData(e.target.value)}
+          onKeyPress={betterFunction}
+        />
         <button type="submit">Search </button>
+        <button onClick={handleReset}>Reset </button>
       </form>
       <p>{displayData}</p>
     </div>
