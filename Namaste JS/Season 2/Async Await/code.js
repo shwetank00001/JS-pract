@@ -21,6 +21,8 @@ async function get3(){
     const value = await p;
     console.log(value)
 }
-get3()
+get3();
+
+//three ways to create a promise.
 
 
