@@ -1,9 +1,9 @@
-import Main from "./fetchCustom/Main";
+import ReducerFile from './hooks/reducer/ReducerFile'
 
 function App() {
   return (
     <>
-      <Main />
+      <ReducerFile />
     </>
   );
 }
