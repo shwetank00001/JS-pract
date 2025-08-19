@@ -1,9 +1,8 @@
-import ReducerFile from './hooks/reducer/ReducerFile'
-
+import Home from "./themes/Home";
 function App() {
   return (
     <>
-      <ReducerFile />
+      <Home />
     </>
   );
 }
