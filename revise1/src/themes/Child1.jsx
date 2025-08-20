@@ -1,8 +1,17 @@
-import React from 'react'
+import { useContext } from "react"
+import { globalContext } from "./globalContext"
 
-const Child1 = () => {
+const Child1= () => {
+  const {color} = useContext(globalContext)
+
+  const styles = {
+    backgroundColor : color
+  }
+
   return (
-    <div>Child1</div>
+    <div style={styles}>
+      <p>Content for child1</p>
+    </div>
   )
 }
 
