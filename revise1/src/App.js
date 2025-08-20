@@ -1,8 +1,8 @@
-import Home from "./themes/Home";
+import Debounce from "./debounce/Debounce";
 function App() {
   return (
     <>
-      <Home />
+      <Debounce />
     </>
   );
 }

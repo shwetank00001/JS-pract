@@ -6,7 +6,9 @@ const CallbackHook = () => {
     let add = useCallback (function(){
         setCount(count+1)
         console.log(`CALLBACK RENDERED: ${count}` )
-    }, [])
+    }, []);
+
+    
   return (
     <div>
         <h3>
