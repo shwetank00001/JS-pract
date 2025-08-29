@@ -1,8 +1,8 @@
-import Debounce from "./debounce/Debounce";
+import Red from "./hooks/reducer/Red";
 function App() {
   return (
     <>
-      <Debounce />
+      <Red />
     </>
   );
 }
