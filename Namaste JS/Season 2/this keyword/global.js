@@ -6,4 +6,6 @@ function x(){
     console.log(this)
 }
 x()
-window.x()
+// window.x()
+
+

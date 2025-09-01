@@ -25,4 +25,15 @@ let obj1 = {
     }
 }
 
-obj1.x()
+obj1.x();
+
+
+
+let object3 = {
+    abc : 2020,
+    showData : () => {
+        console.log(this)
+    }
+}
+
+object3.showData()

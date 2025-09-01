@@ -9,4 +9,15 @@ const obj = {
     }
 }
 
-obj.x() 
+obj.x() ;
+
+
+const obj1 = {
+    b : 3993,
+    printData : function(){
+        console.log(this.b)
+    }
+}
+
+obj1.printData()
+
