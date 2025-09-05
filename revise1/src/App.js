@@ -1,8 +1,8 @@
-import Red from "./hooks/reducer/Red";
+import Protein from "./hooks/reducer/Protein";
 function App() {
   return (
     <>
-      <Red />
+      <Protein />
     </>
   );
 }
