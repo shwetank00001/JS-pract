@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-
 const Welcome = () => {
   return (
     <div>
@@ -9,6 +8,7 @@ const Welcome = () => {
         <button><Link to={'/about'}>About</Link></button>
         <button><Link to={'/contact'}>Contact</Link></button>
         <button><Link to={'/auth'}>Auth</Link></button>
+        <button><Link to={'/personal'}>Personal Data</Link></button>
 
     </div>
   )
