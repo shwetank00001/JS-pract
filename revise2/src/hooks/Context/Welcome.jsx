@@ -5,7 +5,7 @@ const Welcome = () => {
   return (
     <div>
         <h1>Testing</h1>
-        <button><Link to={'/about'}>About</Link></button>
+        <button data-cy="aboutButton"><Link to={'/about'}>About</Link></button>
         <button><Link to={'/contact'}>Contact</Link></button>
         <button><Link to={'/auth'}>Auth</Link></button>
         <button><Link to={'/personal'}>Personal Data</Link></button>
