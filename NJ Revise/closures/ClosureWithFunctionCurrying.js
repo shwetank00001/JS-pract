@@ -7,4 +7,4 @@ function gp(dataParam){
 }
 
 const z = gp("This is the GP function used with function currying!!");
-z()
+z(19)

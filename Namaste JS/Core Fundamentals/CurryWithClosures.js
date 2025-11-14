@@ -8,4 +8,4 @@ function outer(x){
 }
 
 const closureCurr = outer(10)
-closureCurr(20)
+closureCurr(20);
