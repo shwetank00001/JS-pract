@@ -115,5 +115,25 @@ Consoling the keys here will only give the keys in the top level!
 
 const key = Object.keys(myObject);   // returns an array
 console.log(key)  // [ 'name', 'age' ]
+
+============================================================
+We use 'ain' when iterating over an object and "of" when over a map.
 ============================================================
 
+
+How to create a HASH MAP aka MAP in JS.
+
+
+const newHashMap = new Map();
+
+newHashMap.set("Name", "Shwetank");
+newHashMap.set("Age", 26);
+newHashMap.set("Company", "Welocalize");
+newHashMap.set("City", "Gurgaon");
+
+console.log(newHashMap.get("City"));
+
+
+for (let [key, value] of newHashMap){
+    console.log(`${key}:${value}`)
+}
