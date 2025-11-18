@@ -4,6 +4,8 @@ let ob1 = {
     "is rich?" : "Yes"
 }
 console.log(ob1)
+
 for(keys in ob1){
+    console.log(ob1[keys])
     console.log(keys)
 }
