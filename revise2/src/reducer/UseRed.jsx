@@ -10,14 +10,20 @@ const UseRed = () => {
             return {
                 value: newData
             }
-
         }
 
+        if(action.type === "Del"){
+            const newData = state.value.filter((item) => {
+                return item.id !== action.payload;
+            })
+            return {
+                value: newData
+            }
+        }
     }
     const defaultState = {
         value: []
     }
-
 
     function handleSubmit(e){
         e.preventDefault();
@@ -32,10 +38,17 @@ const UseRed = () => {
 
     const [state, dispatch] = useReducer(reducer, defaultState);
 
+    function handleDelete(idParam){
+        
+        console.log(idParam);
+        dispatch({type:"Del", payload: idParam})
+    }
+
     const ele = state.value.map(function(item){
         return (
             <div>
                 <h3>{item.newValue}</h3>
+                <button onClick={() =>{handleDelete(item.id)} }>Delete</button>
             </div>
         )
     })
