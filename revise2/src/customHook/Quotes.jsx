@@ -7,7 +7,6 @@ const Quotes = () => {
     const {allData} = useFetch(url);
     const finalQuotes = allData?.quotes || []
 
-
     const ele = finalQuotes.map(function(item){
         return (
             <div key={item.id}>

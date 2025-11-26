@@ -1,14 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import MainPage from './customHook/MainPage'
+import UseRed from './reducer/UseRed'
 import {BrowserRouter} from 'react-router'
 import State from './hooks/state/State'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <MainPage />  
+      <UseRed />  
     </BrowserRouter>
   </StrictMode>,
 )
