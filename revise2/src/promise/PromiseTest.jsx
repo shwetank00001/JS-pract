@@ -12,7 +12,7 @@ const PromiseTest = () => {
                     name: "Shwetank",
                     location : "Noida"
                 };
-                resolve("areaadljlakdj", area)
+                resolve(area)
             }
             else reject("Error fetching cart");
         })
