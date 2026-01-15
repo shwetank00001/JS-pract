@@ -1,9 +1,10 @@
-import States from "./hooks/States"
+import MainPage from "../customHooks/MainPage";
+
 function App() {
  
   return (
     <>
-    <States />
+    <MainPage />
     </>
   )
 }
