@@ -1,10 +1,9 @@
-import MainPage from "../customHooks/MainPage";
-
+import HomePage from "../UseContext/HomePage"
 function App() {
  
   return (
     <>
-    <MainPage />
+    <HomePage/>
     </>
   )
 }
