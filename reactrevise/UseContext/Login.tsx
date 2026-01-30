@@ -1,8 +1,30 @@
-import React from 'react'
-
+import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+      const [email, setEmail] = useState('')
+      const [password, setPassword] = useState('');
+
+      const nav = useNavigate();
+
+      const handleSubmit = (e:any) => {
+        e.preventDefault();""
+
+        if(window.localStorage.getItem("email") === email && window.localStorage.getItem("password") === password ){
+          alert("Passwords match");
+          nav('/admin')
+
+        }
+        else alert('password dont')
+      }
+
   return (
-    <div>Login</div>
+    <div>
+        <form onSubmit={handleSubmit}>
+            <input type='text' placeholder='add email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type='text' placeholder='add pass' value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button type='submit'>Submit</button>
+        </form>
+    </div>
   )
 }
 
