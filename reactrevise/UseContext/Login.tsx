@@ -1,17 +1,21 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+import { globalContext} from './globalContext';
+
 const Login = () => {
       const [email, setEmail] = useState('')
       const [password, setPassword] = useState('');
 
       const nav = useNavigate();
+      const {auth, setAuth} = useContext(globalContext)
+      
 
       const handleSubmit = (e:any) => {
-        e.preventDefault();""
-
+        e.preventDefault();
         if(window.localStorage.getItem("email") === email && window.localStorage.getItem("password") === password ){
           alert("Passwords match");
-          nav('/admin')
+          nav('/admin');
+          setAuth(true)
 
         }
         else alert('password dont')
