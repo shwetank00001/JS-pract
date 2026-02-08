@@ -1,11 +1,9 @@
-import HomePage from "../UseContext/HomePage"
-import Welcome from "../UseContext/Welcome"
-
+import Promise from '../Promise/Promise'
 function App() {
 
   return (
     <>
-      <Welcome/>
+      <Promise/>
     </>
   )
 }
