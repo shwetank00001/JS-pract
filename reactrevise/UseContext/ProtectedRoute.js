@@ -4,7 +4,7 @@ import { Navigate, useNavigation } from 'react-router-dom'
 
 const ProtectedRoute = ({children}) => {
     const {auth} = useContext(globalContext)
-    return auth ? children : "Hello Bro"
+    return auth ? children : "Please Sign in"
 }
 
 export default ProtectedRoute

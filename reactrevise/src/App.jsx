@@ -1,11 +1,9 @@
-import HomePage from "../UseContext/HomePage"
-import Welcome from "../UseContext/Welcome"
-
+import Reducer from "../UseReducer/Reducer"
 function App() {
 
   return (
     <>
-      <Welcome/>
+      <Reducer/>
     </>
   )
 }
