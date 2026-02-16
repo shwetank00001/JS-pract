@@ -9,7 +9,7 @@ const Reducer = () => {
     <div>
         <form>
             <input placeholder='Enter todo' value={data} onChange={(e) => setData(e.target.value)}  />
-            <button>Add </button>
+            <button type='submit'>Add </button>
         </form>
     </div>
   )
