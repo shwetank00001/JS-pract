@@ -4,6 +4,9 @@ const Reducer = () => {
 
     const [data, setData] = useState([]);
 
+    function handleSubmit(e){
+        
+    }
 
   return (
     <div>
