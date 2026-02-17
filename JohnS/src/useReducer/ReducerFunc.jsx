@@ -53,7 +53,8 @@ const ReducerFunc = () => {
         const newData = { id: new Date().getTime(), name: name}
         // setList(function(item){
         //     return [...item, newData]
-        // })
+        // }) 
+         
         dispatch({type: "add", payload: newData})
     }
   return (
