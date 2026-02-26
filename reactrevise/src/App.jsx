@@ -1,11 +1,9 @@
-
-import Reducer from "../UseReducer/Reducer"
-import Promise from '../Promise/Promise'
+import UseEffectTest from "./effect/UseEffectTest"
 function App() {
 
   return (
     <>
-      <Reducer/>
+      <UseEffectTest/>
     </>
   )
 }
